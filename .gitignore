@@ -1,9 +1,3 @@
-.vercel
-
-# Build output
-dist/
-.astro/
-
 # Dependencies
 node_modules/
 .pnp
@@ -14,16 +8,19 @@ dist/
 build/
 .astro/
 
-# Claude agent files — NEVER commit these
-.claude/
-*.claude
-.claude.json
-
 # Environment
 .env
 .env.local
 .env.production
 
-# OS
+# Claude agent files
+.claude/
+*.claude
+.claude.json
+
+# Hosting
+.vercel
+
+# OS files
 .DS_Store
 Thumbs.db
