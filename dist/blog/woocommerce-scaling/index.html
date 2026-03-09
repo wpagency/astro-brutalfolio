@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v5.18.0"><meta name="description" content="How we scaled a WooCommerce store from 500 to 100,000+ monthly orders without switching platforms."><meta name="author" content="brutalfolio"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><!-- Open Graph --><meta property="og:title" content="WooCommerce at Scale: Running 100K Orders/Month | BrutalFolio Blog"><meta property="og:description" content="How we scaled a WooCommerce store from 500 to 100,000+ monthly orders without switching platforms."><meta property="og:image" content="/og-image.png"><meta property="og:url" content="https://example.com/blog/woocommerce-scaling/"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="brutalfolio"><!-- Article specific tags --><!-- PWA --><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0A0A0A"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="brutalfolio"><link rel="apple-touch-icon" href="/icon-192.png"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WooCommerce at Scale: Running 100K Orders/Month | BrutalFolio Blog"><meta name="twitter:description" content="How we scaled a WooCommerce store from 500 to 100,000+ monthly orders without switching platforms."><meta name="twitter:image" content="/og-image.png"><!-- Canonical URL --><link rel="canonical" href="https://example.com/blog/woocommerce-scaling/"><link rel="sitemap" href="/sitemap-index.xml"><!-- Schema.org Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"brutalfolio","url":"https://example.com","logo":"https://example.com/og-image.png","description":"Modern agency website built with Astro","sameAs":["https://twitter.com","https://linkedin.com","https://github.com"],"contact":{"@type":"ContactPoint","contactType":"Customer Service","telephone":"+1-XXX-XXX-XXXX","email":"your-email@example.com"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://example.com","name":"brutalfolio","description":"How we scaled a WooCommerce store from 500 to 100,000+ monthly orders without switching platforms.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://example.com/search?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script><title>WooCommerce at Scale: Running 100K Orders/Month | BrutalFolio Blog</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><link rel="stylesheet" href="/_astro/about.DF9siCfP.css">
+<link rel="stylesheet" href="/_astro/_slug_.85ZemZ0j.css"></head> <body class="min-h-screen flex flex-col"> <header class="fixed top-0 left-0 right-0 z-50 bg-brutal-white border-b-brutal border-brutal-black"> <nav class="container mx-auto px-edge py-4"> <div class="flex items-center justify-between"> <!-- Logo --> <a href="/" class="group flex items-center gap-2"> <div class="w-12 h-12 bg-brutal-yellow border-brutal border-brutal-black shadow-brutal-sm group-hover:shadow-brutal transition-all duration-200 flex items-center justify-center"> <span class="font-display font-bold text-lg">BF</span> </div> <span class="font-display font-bold text-xl hidden sm:block">BRUTALFOLIO</span> </a> <!-- Desktop Navigation --> <div class="hidden md:flex items-center gap-8"> <a href="/services" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> SERVICES <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a><a href="/portfolio" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> PORTFOLIO <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a><a href="/showcase" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> SHOWCASE <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a><a href="/blog" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> BLOG <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a><a href="/about" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> ABOUT <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a><a href="/contact" class="font-display font-bold text-lg hover:text-brutal-blue relative group"> CONTACT <span class="absolute -bottom-2 left-0 w-0 h-1 bg-brutal-yellow group-hover:w-full"></span> </a> <div class="language-picker" data-astro-cid-dkurt46j> <button class="current-lang" data-astro-cid-dkurt46j> <span data-astro-cid-dkurt46j>English</span> <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-dkurt46j> <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" data-astro-cid-dkurt46j></path> </svg> </button> <div class="dropdown" data-astro-cid-dkurt46j> <a href="/es/blog/woocommerce-scaling/" class="dropdown-item" data-astro-cid-dkurt46j> Español </a><a href="/fr/blog/woocommerce-scaling/" class="dropdown-item" data-astro-cid-dkurt46j> Français </a> </div> </div>  <button class="btn-brutal-primary"> START PROJECT </button> </div> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden w-12 h-12 border-brutal border-brutal-black bg-brutal-yellow flex items-center justify-center hover:shadow-brutal-sm" aria-label="Toggle menu"> <div class="space-y-1"> <span class="block w-6 h-1 bg-brutal-black"></span> <span class="block w-6 h-1 bg-brutal-black"></span> <span class="block w-6 h-1 bg-brutal-black"></span> </div> </button> </div> <!-- Mobile Navigation --> <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-brutal-white border-b-brutal border-brutal-black transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 max-h-[calc(100vh-80px)] overflow-y-auto"> <div class="container mx-auto px-edge py-8 space-y-4"> <a href="/services" class="block font-display font-bold text-xl hover:text-brutal-blue"> SERVICES </a><a href="/portfolio" class="block font-display font-bold text-xl hover:text-brutal-blue"> PORTFOLIO </a><a href="/showcase" class="block font-display font-bold text-xl hover:text-brutal-blue"> SHOWCASE </a><a href="/blog" class="block font-display font-bold text-xl hover:text-brutal-blue"> BLOG </a><a href="/about" class="block font-display font-bold text-xl hover:text-brutal-blue"> ABOUT </a><a href="/contact" class="block font-display font-bold text-xl hover:text-brutal-blue"> CONTACT </a> <div class="pt-4 border-t-4 border-brutal-black"> <div class="language-picker" data-astro-cid-dkurt46j> <button class="current-lang" data-astro-cid-dkurt46j> <span data-astro-cid-dkurt46j>English</span> <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-dkurt46j> <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" data-astro-cid-dkurt46j></path> </svg> </button> <div class="dropdown" data-astro-cid-dkurt46j> <a href="/es/blog/woocommerce-scaling/" class="dropdown-item" data-astro-cid-dkurt46j> Español </a><a href="/fr/blog/woocommerce-scaling/" class="dropdown-item" data-astro-cid-dkurt46j> Français </a> </div> </div>  </div> <button class="btn-brutal-primary w-full mt-4"> START PROJECT </button> </div> </div> </nav> </header> <script type="module">const s=document.getElementById("mobile-menu-btn"),e=document.getElementById("mobile-menu");let t=!1;s?.addEventListener("click",()=>{t=!t,t?(e?.classList.remove("-translate-y-full","opacity-0","pointer-events-none"),e?.classList.add("translate-y-0","opacity-100")):(e?.classList.add("-translate-y-full","opacity-0","pointer-events-none"),e?.classList.remove("translate-y-0","opacity-100"))});const a=e?.querySelectorAll("a");a?.forEach(n=>{n.addEventListener("click",()=>{t=!1,e?.classList.add("-translate-y-full","opacity-0","pointer-events-none"),e?.classList.remove("translate-y-0","opacity-100")})});</script> <main class="flex-grow">   <div class="hidden lg:block" data-astro-cid-7jjqptxk> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="2jq1KU" prefix="r0" component-url="/_astro/BrutalCursor.CjIvFbbp.js" component-export="default" renderer-url="/_astro/client.AE0akZX9.js" props="{&quot;data-astro-cid-7jjqptxk&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;BrutalCursor&quot;,&quot;value&quot;:true}" await-children><div class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999] mix-blend-difference"><div class="w-full h-full bg-brutal-yellow border-2 border-brutal-black"></div></div><div class="fixed top-0 left-0 w-12 h-12 pointer-events-none z-[9998]"><div class="w-full h-full border-4 border-brutal-black opacity-30"></div></div><!--astro:end--></astro-island> </div>  <astro-island uid="Z1drK7R" prefix="r1" component-url="/_astro/ScrollAnimations.DCnV4xY1.js" component-export="default" renderer-url="/_astro/client.AE0akZX9.js" props="{&quot;data-astro-cid-7jjqptxk&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ScrollAnimations&quot;,&quot;value&quot;:true}"></astro-island>  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain" data-astro-cid-7jjqptxk></div>  <article class="pt-32" data-astro-cid-7jjqptxk> <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-brutal-black text-brutal-white" data-astro-cid-7jjqptxk> <!-- Featured Image Background --> <div class="absolute inset-0" data-astro-cid-7jjqptxk> <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&h=900&fit=crop" alt="WooCommerce at Scale: Running 100K Orders/Month" class="w-full h-full object-cover opacity-30" data-astro-cid-7jjqptxk> <div class="absolute inset-0 bg-gradient-to-t from-brutal-black via-brutal-black/80 to-brutal-black/60" data-astro-cid-7jjqptxk></div> </div> <!-- Geometric Shapes --> <div class="absolute top-20 right-20 w-64 h-64 bg-brutal-yellow transform rotate-45 opacity-20 mix-blend-multiply" data-astro-cid-7jjqptxk></div> <div class="absolute bottom-20 left-20 w-48 h-48 border-[20px] border-brutal-blue transform -rotate-12 opacity-20" data-astro-cid-7jjqptxk></div> <div class="container mx-auto px-edge relative z-10" data-astro-cid-7jjqptxk> <div class="max-w-4xl mx-auto" data-astro-cid-7jjqptxk> <!-- Meta --> <div class="flex flex-wrap gap-4 mb-8" data-astro-cid-7jjqptxk> <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black font-mono text-sm font-bold" data-astro-cid-7jjqptxk> March 12, 2024 </span> <span class="inline-block px-4 py-2 bg-brutal-blue text-brutal-white font-mono text-sm font-bold" data-astro-cid-7jjqptxk>
+By Theme Team </span> </div> <!-- Title --> <h1 class="font-display font-black text-[clamp(2rem,8vw,5rem)] leading-[0.9] mb-8" data-astro-cid-7jjqptxk> WooCommerce at Scale: Running 100K Orders/Month </h1> <!-- Description --> <p class="text-xl md:text-2xl font-bold max-w-3xl" data-astro-cid-7jjqptxk> How we scaled a WooCommerce store from 500 to 100,000+ monthly orders without switching platforms. </p> <!-- Tags --> <div class="flex flex-wrap gap-3 mt-8" data-astro-cid-7jjqptxk> <span class="inline-block px-4 py-2 border-2 border-brutal-white font-mono text-sm hover:bg-brutal-white hover:text-brutal-black transition-colors cursor-pointer" data-astro-cid-7jjqptxk>
+#woocommerce </span><span class="inline-block px-4 py-2 border-2 border-brutal-white font-mono text-sm hover:bg-brutal-white hover:text-brutal-black transition-colors cursor-pointer" data-astro-cid-7jjqptxk>
+#scaling </span><span class="inline-block px-4 py-2 border-2 border-brutal-white font-mono text-sm hover:bg-brutal-white hover:text-brutal-black transition-colors cursor-pointer" data-astro-cid-7jjqptxk>
+#performance </span><span class="inline-block px-4 py-2 border-2 border-brutal-white font-mono text-sm hover:bg-brutal-white hover:text-brutal-black transition-colors cursor-pointer" data-astro-cid-7jjqptxk>
+#e-commerce </span> </div> </div> </div> </header> <!-- Article Content --> <div class="py-section bg-brutal-white" data-astro-cid-7jjqptxk> <div class="container mx-auto px-edge" data-astro-cid-7jjqptxk> <div class="max-w-4xl mx-auto" data-astro-cid-7jjqptxk> <!-- Prose Content with Brutal Styling --> <div class="prose-content" data-astro-cid-7jjqptxk> <h2 id="they-said-woocommerce-couldnt-scale">They Said WooCommerce Couldn’t Scale</h2>
+<p>They were wrong.</p>
+<p>Last year, we took a struggling WooCommerce store from 500 orders/month to 100,000+. Same platform. No Shopify migration. No custom build.</p>
+<p>Here’s exactly how we did it.</p>
+<h3 id="the-starting-point">The Starting Point</h3>
+<p>A disaster:</p>
+<ul>
+<li><strong>Page load</strong>: 8+ seconds</li>
+<li><strong>Database</strong>: 4GB, mostly garbage</li>
+<li><strong>Plugins</strong>: 67 (yes, really)</li>
+<li><strong>Monthly revenue</strong>: $50K</li>
+<li><strong>Cart abandonment</strong>: 78%</li>
+</ul>
+<h3 id="the-current-state">The Current State</h3>
+<p>A machine:</p>
+<ul>
+<li><strong>Page load</strong>: 0.9 seconds</li>
+<li><strong>Database</strong>: 800MB, optimized</li>
+<li><strong>Plugins</strong>: 12 essential ones</li>
+<li><strong>Monthly revenue</strong>: $2.8M</li>
+<li><strong>Cart abandonment</strong>: 42%</li>
+</ul>
+<h3 id="the-infrastructure-stack">The Infrastructure Stack</h3>
+<h4 id="1-hosting-that-doesnt-suck">1. Hosting That Doesn’t Suck</h4>
+<p>Forget shared hosting. Forget basic VPS.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Our setup</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">Load Balancer</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">2x instances</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">Web Servers</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">4x PHP-FPM workers</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">Database</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Primary + 2 replicas</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">Redis</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Object + Page cache</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">CDN</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Global edge caching</span></span></code></pre>
+<p>Monthly cost: $1,200
+Monthly revenue increase: $2.75M
+ROI: Obvious</p>
+<h4 id="2-database-optimization">2. Database Optimization</h4>
+<p>WooCommerce’s database is a mess by default.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#6A737D">-- Clean transients</span></span>
+<span class="line"><span style="color:#F97583">DELETE</span><span style="color:#F97583"> FROM</span><span style="color:#E1E4E8"> wp_options</span></span>
+<span class="line"><span style="color:#F97583">WHERE</span><span style="color:#E1E4E8"> option_name </span><span style="color:#F97583">LIKE</span><span style="color:#9ECBFF"> '_transient_%'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">-- Optimize order queries</span></span>
+<span class="line"><span style="color:#F97583">ALTER</span><span style="color:#F97583"> TABLE</span><span style="color:#E1E4E8"> wp_wc_order_stats</span></span>
+<span class="line"><span style="color:#F97583">ADD</span><span style="color:#F97583"> INDEX</span><span style="color:#E1E4E8"> idx_date_status (date_created, </span><span style="color:#F97583">status</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">-- Archive old orders</span></span>
+<span class="line"><span style="color:#F97583">CREATE</span><span style="color:#F97583"> TABLE</span><span style="color:#B392F0"> wp_wc_orders_archive</span></span>
+<span class="line"><span style="color:#F97583">SELECT</span><span style="color:#F97583"> *</span><span style="color:#F97583"> FROM</span><span style="color:#E1E4E8"> wp_wc_orders</span></span>
+<span class="line"><span style="color:#F97583">WHERE</span><span style="color:#E1E4E8"> date_created </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> DATE_SUB(</span><span style="color:#F97583">NOW</span><span style="color:#E1E4E8">(), INTERVAL </span><span style="color:#79B8FF">6</span><span style="color:#F97583"> MONTH</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<p>Result: 95% faster order queries</p>
+<h3 id="the-code-optimizations">The Code Optimizations</h3>
+<h4 id="1-cart-performance">1. Cart Performance</h4>
+<p>Default WooCommerce cart = AJAX nightmare</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// Disable cart fragments (HUGE win)</span></span>
+<span class="line"><span style="color:#B392F0">add_action</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'wp_enqueue_scripts'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  wp_dequeue_script</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'wc-cart-fragments'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Custom mini-cart with local storage</span></span>
+<span class="line"><span style="color:#B392F0">add_action</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'wp_footer'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  ?></span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;</span><span style="color:#79B8FF">script</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#6A737D">    // Cart in localStorage, not AJAX</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> cart</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> JSON</span><span style="color:#F97583">.</span><span style="color:#B392F0">parse</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">localStorage</span><span style="color:#F97583">.</span><span style="color:#B392F0">getItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'wc_cart'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> '{}'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;/</span><span style="color:#79B8FF">script</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">  &#x3C;?</span><span style="color:#79B8FF">php</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h4 id="2-checkout-optimization">2. Checkout Optimization</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// Remove unnecessary checkout fields</span></span>
+<span class="line"><span style="color:#B392F0">add_filter</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'woocommerce_checkout_fields'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">($fields) {</span></span>
+<span class="line"><span style="color:#79B8FF">  unset</span><span style="color:#E1E4E8">($fields[</span><span style="color:#9ECBFF">'billing'</span><span style="color:#E1E4E8">][</span><span style="color:#9ECBFF">'billing_company'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#79B8FF">  unset</span><span style="color:#E1E4E8">($fields[</span><span style="color:#9ECBFF">'billing'</span><span style="color:#E1E4E8">][</span><span style="color:#9ECBFF">'billing_address_2'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> $fields;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Async payment processing</span></span>
+<span class="line"><span style="color:#B392F0">add_filter</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'woocommerce_payment_complete'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">($order_id) {</span></span>
+<span class="line"><span style="color:#B392F0">  wp_schedule_single_event</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">time</span><span style="color:#E1E4E8">(), </span><span style="color:#9ECBFF">'process_order_async'</span><span style="color:#E1E4E8">, [$order_id]);</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> $order_id;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="the-scaling-secrets">The Scaling Secrets</h3>
+<h4 id="1-order-processing">1. Order Processing</h4>
+<p>Stop processing orders synchronously.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// Queue-based order processing</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> OrderQueue</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> add</span><span style="color:#E1E4E8">($order_id) {</span></span>
+<span class="line"><span style="color:#B392F0">    wp_insert_post</span><span style="color:#E1E4E8">([</span></span>
+<span class="line"><span style="color:#9ECBFF">      'post_type'</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> 'order_queue'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      'meta_input'</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'order_id'</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> $order_id]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> process</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">    // Background job every minute</span></span>
+<span class="line"><span style="color:#E1E4E8">    $queued </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_posts</span><span style="color:#E1E4E8">([</span><span style="color:#9ECBFF">'post_type'</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> 'order_queue'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#F97583">    foreach</span><span style="color:#E1E4E8">($queued </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> $item) {</span></span>
+<span class="line"><span style="color:#F97583">      self::</span><span style="color:#B392F0">processOrder</span><span style="color:#E1E4E8">($item</span><span style="color:#F97583">-></span><span style="color:#E1E4E8">order_id);</span></span>
+<span class="line"><span style="color:#B392F0">      wp_delete_post</span><span style="color:#E1E4E8">($item</span><span style="color:#F97583">-></span><span style="color:#E1E4E8">ID);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="2-inventory-management">2. Inventory Management</h4>
+<p>Real-time inventory = database killer</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="php"><code><span class="line"><span style="color:#6A737D">// Redis-based inventory</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> RedisInventory</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> get</span><span style="color:#E1E4E8">($product_id) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#B392F0"> wp_cache_get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"stock_</span><span style="color:#E1E4E8">$product_id</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'inventory'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> update</span><span style="color:#E1E4E8">($product_id, $qty) {</span></span>
+<span class="line"><span style="color:#B392F0">    wp_cache_set</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"stock_</span><span style="color:#E1E4E8">$product_id</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, $qty, </span><span style="color:#9ECBFF">'inventory'</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">    // Sync to database async</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="the-plugin-diet">The Plugin Diet</h3>
+<p>From 67 to 12 plugins:</p>
+<p><strong>Kept:</strong></p>
+<ul>
+<li>WooCommerce (obviously)</li>
+<li>Redis Object Cache</li>
+<li>Cloudflare</li>
+<li>Advanced Custom Fields</li>
+<li>WP Rocket</li>
+<li>UpdraftPlus</li>
+</ul>
+<p><strong>Killed:</strong></p>
+<ul>
+<li>All page builders</li>
+<li>Social sharing plugins</li>
+<li>Slider plugins</li>
+<li>Pop-up plugins</li>
+<li>“Optimization” plugins</li>
+<li>Security plugins (handled at server)</li>
+</ul>
+<h3 id="the-caching-strategy">The Caching Strategy</h3>
+<p>Cache everything, invalidate intelligently:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#6A737D"># Nginx microcaching</span></span>
+<span class="line"><span style="color:#F97583">location</span><span style="color:#F97583"> ~</span><span style="color:#DBEDFF"> \.php$ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">  fastcgi_cache_bypass </span><span style="color:#E1E4E8">$skip_cache;</span></span>
+<span class="line"><span style="color:#F97583">  fastcgi_cache </span><span style="color:#E1E4E8">WORDPRESS;</span></span>
+<span class="line"><span style="color:#F97583">  fastcgi_cache_valid </span><span style="color:#79B8FF">200</span><span style="color:#79B8FF"> 60m</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  fastcgi_cache_methods </span><span style="color:#E1E4E8">GET HEAD;</span></span>
+<span class="line"><span style="color:#F97583">  add_header </span><span style="color:#E1E4E8">X-Cache $upstream_cache_status;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="real-performance-numbers">Real Performance Numbers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Improvement</th></tr></thead><tbody><tr><td>TTFB</td><td>2.8s</td><td>120ms</td><td>95.7%</td></tr><tr><td>FCP</td><td>4.2s</td><td>0.8s</td><td>81%</td></tr><tr><td>Orders/hour</td><td>20</td><td>450</td><td>2,150%</td></tr><tr><td>Conversion</td><td>1.2%</td><td>4.8%</td><td>300%</td></tr></tbody></table>
+<h3 id="the-monitoring-stack">The Monitoring Stack</h3>
+<p>You can’t scale what you don’t measure:</p>
+<ul>
+<li><strong>APM</strong>: New Relic</li>
+<li><strong>Uptime</strong>: Pingdom</li>
+<li><strong>Errors</strong>: Sentry</li>
+<li><strong>Analytics</strong>: Matomo (self-hosted)</li>
+<li><strong>Real User</strong>: custom JavaScript</li>
+</ul>
+<h3 id="lessons-learned">Lessons Learned</h3>
+<ol>
+<li><strong>WooCommerce can scale</strong> - Stop believing it can’t</li>
+<li><strong>Infrastructure matters</strong> - Spend money on hosting</li>
+<li><strong>Less is more</strong> - Kill unnecessary plugins</li>
+<li><strong>Cache aggressively</strong> - But invalidate smart</li>
+<li><strong>Monitor everything</strong> - Data drives decisions</li>
+</ol>
+<h3 id="the-money-part">The Money Part</h3>
+<p>Investment vs Return:</p>
+<ul>
+<li><strong>Development</strong>: $45K</li>
+<li><strong>Infrastructure</strong>: $14.4K/year</li>
+<li><strong>Revenue increase</strong>: $2.75M/month</li>
+</ul>
+<p>Time to ROI: 2 weeks</p>
+<h3 id="when-to-not-use-woocommerce">When to NOT Use WooCommerce</h3>
+<p>Be honest about limitations:</p>
+<ul>
+<li>Need 1M+ SKUs? Use Magento</li>
+<li>B2B complexity? Consider BigCommerce</li>
+<li>Subscription focus? Maybe Shopify</li>
+<li>Marketplace? Custom build</li>
+</ul>
+<p>But for 99% of e-commerce? WooCommerce scales fine.</p>
+<h3 id="your-next-steps">Your Next Steps</h3>
+<ol>
+<li>Audit your current setup</li>
+<li>Fix the obvious problems</li>
+<li>Upgrade infrastructure</li>
+<li>Optimize database</li>
+<li>Implement caching</li>
+<li>Monitor and iterate</li>
+</ol>
+<p>Stop making excuses. Start scaling.</p> </div>  <!-- Author Box --> <div class="mt-16 p-8 border-mega border-brutal-black bg-brutal-yellow shadow-brutal-xl" data-astro-cid-7jjqptxk> <h3 class="font-display font-black text-2xl mb-4 uppercase" data-astro-cid-7jjqptxk>
+About the Author
+</h3> <p class="text-lg font-bold" data-astro-cid-7jjqptxk>
+The BrutalFolio team has been building WordPress sites for years.
+              We've seen it all, broken it all, and fixed it all. Now we share
+              what actually works.
+</p> </div> </div> </div> </div> <!-- Related Posts --> <section class="py-section bg-brutal-gray" data-astro-cid-7jjqptxk> <div class="container mx-auto px-edge" data-astro-cid-7jjqptxk> <h2 class="font-display font-black text-5xl mb-12 text-center" data-astro-cid-7jjqptxk> <span class="inline-block px-8 py-4 bg-brutal-black text-brutal-white transform -rotate-2 shadow-brutal-xl" data-astro-cid-7jjqptxk>
+KEEP READING
+</span> </h2> <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto" data-astro-cid-7jjqptxk> <article class="group border-brutal border-brutal-black shadow-brutal-lg bg-brutal-white p-6 transform rotate-1 hover:rotate-0 transition-all" data-astro-cid-7jjqptxk> <span class="inline-block px-3 py-1 bg-brutal-black text-brutal-white font-mono text-xs mb-4" data-astro-cid-7jjqptxk> March 15, 2024 </span> <h3 class="font-display font-bold text-xl mb-3 group-hover:text-brutal-blue transition-colors" data-astro-cid-7jjqptxk> <a href="/blog/wordpress-performance-2024" class="hover:underline" data-astro-cid-7jjqptxk> WordPress Performance in 2024: The No-BS Guide </a> </h3> <a href="/blog/wordpress-performance-2024" class="inline-block font-display font-bold uppercase group-hover:translate-x-2 transition-transform" data-astro-cid-7jjqptxk>
+Read →
+</a> </article><article class="group border-brutal border-brutal-black shadow-brutal-lg bg-brutal-white p-6 transform -rotate-1 hover:rotate-0 transition-all" data-astro-cid-7jjqptxk> <span class="inline-block px-3 py-1 bg-brutal-black text-brutal-white font-mono text-xs mb-4" data-astro-cid-7jjqptxk> March 8, 2024 </span> <h3 class="font-display font-bold text-xl mb-3 group-hover:text-brutal-blue transition-colors" data-astro-cid-7jjqptxk> <a href="/blog/gutenberg-vs-page-builders" class="hover:underline" data-astro-cid-7jjqptxk> Gutenberg vs Page Builders: The Fight Nobody Wins </a> </h3> <a href="/blog/gutenberg-vs-page-builders" class="inline-block font-display font-bold uppercase group-hover:translate-x-2 transition-transform" data-astro-cid-7jjqptxk>
+Read →
+</a> </article> </div> </div> </section> </article>  <section class="py-section bg-brutal-black text-brutal-white" data-astro-cid-7jjqptxk> <div class="container mx-auto px-edge text-center" data-astro-cid-7jjqptxk> <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-8" data-astro-cid-7jjqptxk>
+DON'T MISS THE NEXT ONE
+</h2> <p class="text-xl font-bold mb-8 max-w-2xl mx-auto" data-astro-cid-7jjqptxk>
+Get our best WordPress insights delivered straight to your inbox. No
+        spam, just value.
+</p> <a href="/blog" class="inline-block px-8 py-4 bg-brutal-yellow text-brutal-black font-black text-xl uppercase border-4 border-brutal-yellow shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all" data-astro-cid-7jjqptxk>
+Back to Blog →
+</a> </div> </section>  </main> <footer class="bg-brutal-black text-brutal-white border-t-mega border-brutal-yellow"> <div class="container mx-auto px-edge py-section"> <!-- Top Section --> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"> <!-- Brand --> <div class="space-y-4"> <div class="flex items-center gap-2"> <div class="w-12 h-12 bg-brutal-yellow border-brutal border-brutal-white flex items-center justify-center"> <span class="font-display font-bold text-xl text-brutal-black">BF</span> </div> <span class="font-display font-bold text-xl">BRUTALFOLIO</span> </div> <p class="text-brutal-gray"> Premium WordPress development that doesn&#39;t suck. Building digital experiences since 2009. </p> <!-- Social Links --> <div class="flex gap-4"> <a href="#" class="w-10 h-10 bg-brutal-white text-brutal-black flex items-center justify-center hover:bg-brutal-yellow transition-colors duration-200"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path> </svg> </a> <a href="#" class="w-10 h-10 bg-brutal-white text-brutal-black flex items-center justify-center hover:bg-brutal-yellow transition-colors duration-200"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path> </svg> </a> <a href="#" class="w-10 h-10 bg-brutal-white text-brutal-black flex items-center justify-center hover:bg-brutal-yellow transition-colors duration-200"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"></path> </svg> </a> </div> </div> <!-- Links --> <div> <h3 class="font-display font-bold text-lg mb-4 text-brutal-yellow"> SERVICES </h3> <ul class="space-y-2"> <li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> WordPress Development </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> E-Commerce </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Performance </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Maintenance </a> </li> </ul> </div> <div> <h3 class="font-display font-bold text-lg mb-4 text-brutal-yellow"> COMPANY </h3> <ul class="space-y-2"> <li> <a href="#about" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> About Us </a> </li><li> <a href="#portfolio" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Our Work </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Process </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Careers </a> </li> </ul> </div> <div> <h3 class="font-display font-bold text-lg mb-4 text-brutal-yellow">  </h3> <ul class="space-y-2"> <li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Blog </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Case Studies </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Documentation </a> </li><li> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Support </a> </li> </ul> </div> </div> <!-- Bottom Section --> <div class="border-t-brutal border-brutal-gray pt-8"> <div class="flex flex-col md:flex-row justify-between items-center gap-4"> <div> <p class="text-brutal-gray text-sm">
+© 2026 BRUTALFOLIO. All rights reserved </p> <p class="text-brutal-gray text-sm mt-2">
+Built with ♥ by <a href="https://wpagency.xyz" target="_blank" rel="noopener noreferrer" class="text-brutal-yellow hover:text-brutal-white transition-colors duration-200">WP Agency</a> — WordPress and Beyond
+</p> </div> <div class="flex gap-6 text-sm"> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Privacy Policy </a> <a href="#" class="text-brutal-gray hover:text-brutal-white transition-colors duration-200"> Terms of Service </a> </div> </div> </div> </div> </footer> <astro-island uid="ZblHiL" prefix="r2" component-url="/_astro/ScrollToTop.BlunDEX6.js" component-export="default" renderer-url="/_astro/client.AE0akZX9.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;ScrollToTop&quot;,&quot;value&quot;:true}" await-children><button class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-brutal-black text-brutal-white border-2 border-brutal-white shadow-brutal hover:shadow-brutal-lg hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-200 opacity-0 translate-y-12 pointer-events-none" aria-label="Scroll to top"><svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg></button><!--astro:end--></astro-island> <!-- Service Worker Registration --> <script type="module">"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").catch(r=>{})});</script> </body> </html>
