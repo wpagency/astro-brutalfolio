@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BrutalCursor from '../../components/islands/BrutalCursor';
+import ScrollAnimations from '../../components/islands/ScrollAnimations';
+
+const pageTitle = 'Contact | BrutalFolio - Construisons Quelque Chose de Brutal';
+const pageDescription = 'Prêt à construire un site WordPress qui refuse de se fondre dans la masse? Parlons de votre projet.';
+
+const contactMethods = [
+  {
+    icon: '📧',
+    label: 'EMAIL',
+    value: 'hello@example.com',
+    link: 'mailto:hello@example.com',
+    color: 'bg-brutal-yellow'
+  },
+  {
+    icon: '💬',
+    label: 'DISCORD',
+    value: '@brutalfolio',
+    link: '#',
+    color: 'bg-brutal-blue'
+  },
+  {
+    icon: '🐦',
+    label: 'TWITTER',
+    value: '@brutalfolio',
+    link: 'https://twitter.com/brutalfolioxyz',
+    color: 'bg-brutal-green'
+  },
+  {
+    icon: '📱',
+    label: 'TELEGRAM',
+    value: '@brutalfolio',
+    link: '#',
+    color: 'bg-brutal-purple'
+  }
+];
+
+const services = [
+  'Développement WordPress',
+  'Solutions de Commerce Électronique',
+  'Optimisation des Performances',
+  'Plateformes de Forum',
+  'Migrations de Sites',
+  'Maintenance et Support'
+];
+
+const faqs = [
+  {
+    q: 'À quelle vitesse pouvez-vous construire mon site?',
+    a: 'Nous ne faisons pas de travaux précipités. La qualité prend un minimum de 4 à 8 semaines. Les sites qui durent des décennies ne sont pas construits du jour au lendemain.'
+  },
+  {
+    q: 'Travaillez-vous avec des constructeurs de pages?',
+    a: 'Non. Nous codons tout sur mesure. Les constructeurs de pages sont pour les amateurs.'
+  },
+  {
+    q: 'Quel est votre tarif horaire?',
+    a: 'Nous ne facturons pas à l\'heure. Les projets commencent à 5 000 €. Vous payez pour les résultats, pas pour le temps.'
+  },
+  {
+    q: 'Pouvez-vous corriger mon site WordPress lent?',
+    a: 'Oui. Nous transformons régulièrement les catastrophes de 8 secondes en expériences sub-seconde.'
+  },
+  {
+    q: 'Proposez-vous l\'hébergement?',
+    a: 'Nous travaillons avec des fournisseurs d\'entreprise. Pas d\'hébergement partagé de mauvaise qualité.'
+  },
+  {
+    q: 'Qu\'en est-il de la maintenance?',
+    a: 'Une formule de rétention facultative commençant à 500 €/mois. Inclut les mises à jour, la surveillance et l\'optimisation.'
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-brutal-black text-brutal-white pt-32">
+    <!-- Animated Shapes -->
+    <div class="absolute top-20 right-20 w-64 h-64 bg-brutal-red transform rotate-45 animate-float opacity-20"></div>
+    <div class="absolute bottom-20 left-20 w-48 h-48 border-[20px] border-brutal-yellow transform -rotate-12 animate-float animation-delay-400 opacity-20"></div>
+
+    <div class="container mx-auto px-edge relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display font-black text-[clamp(3rem,10vw,8rem)] leading-[0.85] mb-8">
+          <span class="block text-brutal-yellow">PARLONS</span>
+          <span class="block text-outline -mt-4">ENSEMBLE</span>
+        </h1>
+        <p class="text-2xl md:text-3xl font-display font-bold">
+          Avez-vous un projet qui a besoin
+          <span class="inline-block px-4 py-2 bg-brutal-red text-brutal-white transform rotate-1 shadow-brutal ml-2">d'honnêteté brutale?</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-section bg-brutal-gray">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="order-2 lg:order-1">
+            <div class="border-mega border-brutal-black bg-brutal-white shadow-brutal-xl p-8">
+              <h2 class="font-display font-black text-3xl mb-6">
+                <span class="inline-block px-4 py-2 bg-brutal-black text-brutal-white">
+                  DEMANDE DE PROJET
+                </span>
+              </h2>
+
+              <form class="space-y-6">
+                <!-- Name -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="name">
+                    Votre Nom <span class="text-brutal-red">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="email">
+                    Adresse Email <span class="text-brutal-red">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none"
+                    placeholder="john@company.com"
+                  />
+                </div>
+
+                <!-- Company -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="company">
+                    Entreprise/Organisation
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none"
+                    placeholder="Awesome Corp"
+                  />
+                </div>
+
+                <!-- Service Type -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="service">
+                    De Quoi Avez-vous Besoin? <span class="text-brutal-red">*</span>
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none bg-brutal-white"
+                  >
+                    <option value="">Sélectionnez un service...</option>
+                    {services.map(service => (
+                      <option value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <!-- Budget -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="budget">
+                    Budget du Projet <span class="text-brutal-red">*</span>
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    required
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none bg-brutal-white"
+                  >
+                    <option value="">Sélectionnez la plage budgétaire...</option>
+                    <option value="5-10k">5 000 € - 10 000 €</option>
+                    <option value="10-25k">10 000 € - 25 000 €</option>
+                    <option value="25-50k">25 000 € - 50 000 €</option>
+                    <option value="50k+">50 000 €+</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label class="block font-mono text-sm uppercase mb-2" for="message">
+                    Détails du Projet <span class="text-brutal-red">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="6"
+                    class="w-full px-4 py-3 border-brutal border-brutal-black font-mono shadow-brutal focus:shadow-brutal-lg transition-all outline-none resize-none"
+                    placeholder="Parlez-nous de votre projet. Soyez précis. Nous apprécions la directivité."
+                  ></textarea>
+                </div>
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  class="w-full px-8 py-4 bg-brutal-black text-brutal-white font-black text-xl uppercase border-brutal border-brutal-black shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all"
+                >
+                  ENVOYER LA DEMANDE DE PROJET →
+                </button>
+
+                <p class="text-sm text-brutal-black/60 font-mono">
+                  * Nous répondons dans les 24 heures. Pas d'automatisation de merde.
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="order-1 lg:order-2 space-y-8">
+            <!-- Direct Contact -->
+            <div>
+              <h3 class="font-display font-black text-2xl mb-6">
+                CONTACT DIRECT
+              </h3>
+              <div class="space-y-4">
+                {contactMethods.map(method => (
+                  <a
+                    href={method.link}
+                    class={`group flex items-center gap-4 p-4 border-brutal border-brutal-black ${method.color} shadow-brutal hover:shadow-brutal-lg hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all`}
+                  >
+                    <span class="text-3xl">{method.icon}</span>
+                    <div>
+                      <div class="font-mono text-xs uppercase">{method.label}</div>
+                      <div class="font-display font-bold text-lg">{method.value}</div>
+                    </div>
+                    <span class="ml-auto text-2xl group-hover:translate-x-2 transition-transform">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="p-6 border-mega border-brutal-black bg-brutal-white shadow-brutal-xl">
+              <h3 class="font-display font-black text-2xl mb-4">DISPONIBILITÉ</h3>
+              <div class="space-y-2 font-mono">
+                <div class="flex justify-between">
+                  <span>LUN - VEN</span>
+                  <span class="font-bold">9H - 18H PST</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>WEEK-END</span>
+                  <span class="font-bold">URGENCES UNIQUEMENT</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>TEMPS DE RÉPONSE</span>
+                  <span class="font-bold">&lt; 24 HEURES</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="p-6 bg-brutal-yellow border-brutal border-brutal-black shadow-brutal-xl">
+              <h3 class="font-display font-black text-2xl mb-4">FAITS RAPIDES</h3>
+              <ul class="space-y-2 font-bold">
+                <li>✓ Projet minimum: 5 000 €</li>
+                <li>✓ Délai moyen: 4-8 semaines</li>
+                <li>✓ Paiement: 50% à l'avance</li>
+                <li>✓ Support disponible 24/7</li>
+                <li>✓ Pas de constructeurs de pages, jamais</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-12 text-center">
+          <span class="inline-block px-6 py-3 bg-brutal-blue text-brutal-white transform -rotate-1 shadow-brutal-xl">
+            QUESTIONS FRÉQUENTES
+          </span>
+        </h2>
+
+        <div class="space-y-6">
+          {faqs.map((faq, index) => (
+            <div
+              class={`border-brutal border-brutal-black shadow-brutal-lg p-6 bg-brutal-gray animate-on-scroll hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all`}
+              style={`animation-delay: ${index * 50}ms`}
+            >
+              <h3 class="font-display font-black text-xl mb-3">{faq.q}</h3>
+              <p class="text-lg">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-section bg-brutal-black text-brutal-white">
+    <div class="container mx-auto px-edge text-center">
+      <h2 class="font-display font-black text-[clamp(2rem,8vw,5rem)] mb-8">
+        VOUS RÉFLÉCHISSEZ ENCORE?
+      </h2>
+      <p class="text-2xl font-bold mb-12 max-w-3xl mx-auto">
+        Votre concurrence ne l'est pas. Ils construisent déjà. Chaque jour que vous attendez, c'est du trafic perdu.
+      </p>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <a href="/fr/portfolio" class="inline-block px-12 py-6 bg-brutal-yellow text-brutal-black font-black text-xl uppercase border-4 border-brutal-yellow shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all">
+          VOIR NOTRE TRAVAIL →
+        </a>
+        <a href="/fr/services" class="inline-block px-12 py-6 bg-brutal-black text-brutal-white font-black text-xl uppercase border-4 border-brutal-white shadow-brutal-xl hover:bg-brutal-white hover:text-brutal-black hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all">
+          VOIR LES SERVICES →
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+

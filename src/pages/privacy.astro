@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Privacy Policy | BrutalFolio';
+const pageDescription = 'Your data is yours. We don\'t sell it, share it, or do shady things with it.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12 border-brutal border-brutal-black bg-brutal-blue text-brutal-white p-8 shadow-brutal-xl">
+          <h1 class="font-display font-black text-5xl mb-4">PRIVACY POLICY</h1>
+          <p class="font-mono text-sm">Last updated: {new Date().toLocaleDateString()}</p>
+          <p class="mt-4 text-xl font-bold">TL;DR: We don't spy on you. We don't sell your data. We're not creepy.</p>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-8">
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-red">WHAT WE COLLECT</h2>
+            <p class="mb-4">Only what we need to build your site and nothing more:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Your name and contact info (obviously)</li>
+              <li>Project requirements and content</li>
+              <li>Payment information (processed by Stripe)</li>
+              <li>Basic analytics (page views, not your life story)</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-green">WHAT WE DON'T COLLECT</h2>
+            <p class="mb-4">We're not Facebook. We don't need to know:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Your browsing history</li>
+              <li>Your location (unless you tell us)</li>
+              <li>Your social media activity</li>
+              <li>Your shoe size (seriously, why would we?)</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-purple">HOW WE USE IT</h2>
+            <p class="mb-4">Your data has one job:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Build your WordPress site</li>
+              <li>Send you invoices</li>
+              <li>Answer your questions</li>
+              <li>Improve our services (not sell you stuff)</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-yellow">WHO WE SHARE WITH</h2>
+            <p class="mb-4 text-xl font-bold">Nobody. Zero. Zilch. Nada.</p>
+            <p>We don't sell, rent, or trade your information. The only exceptions:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono mt-4">
+              <li>If the law requires it (with a valid warrant)</li>
+              <li>To protect our rights (if you try to hack us)</li>
+              <li>Service providers (Stripe for payments, that's it)</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-blue">COOKIES & TRACKING</h2>
+            <p class="mb-4">We use cookies like a normal website:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Essential cookies (to make the site work)</li>
+              <li>Analytics cookies (to see what pages you visit)</li>
+              <li>No creepy tracking cookies</li>
+              <li>No selling your data to advertisers</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-red">YOUR RIGHTS</h2>
+            <p class="mb-4">Your data, your rules:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Request a copy of your data</li>
+              <li>Ask us to delete it</li>
+              <li>Tell us to stop using it</li>
+              <li>Port it somewhere else</li>
+            </ul>
+            <p class="mt-4">Just email us. We'll handle it within 30 days.</p>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-green">SECURITY</h2>
+            <p class="mb-4">We protect your data like it's our own:</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>SSL encryption everywhere</li>
+              <li>Secure servers (not Bob's basement)</li>
+              <li>Regular security audits</li>
+              <li>Strong passwords (no "password123")</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-black text-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4">THE BRUTAL TRUTH</h2>
+            <p class="text-xl font-bold mb-4">We're developers, not data brokers.</p>
+            <p>We build WordPress sites. We don't build surveillance capitalism. Your privacy matters because trust matters.</p>
+            <p class="mt-4">If this changes (it won't), we'll tell you 30 days in advance.</p>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="mt-12 text-center">
+          <p class="font-mono text-sm mb-4">Privacy questions? Data requests? General paranoia?</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="mailto:privacy@example.com" class="inline-block px-8 py-4 bg-brutal-blue text-brutal-white font-black text-xl uppercase border-4 border-brutal-black shadow-brutal hover:shadow-brutal-lg hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              EMAIL US �
+            </a>
+            <a href="/contact" class="inline-block px-8 py-4 bg-brutal-yellow text-brutal-black font-black text-xl uppercase border-4 border-brutal-black shadow-brutal hover:shadow-brutal-lg hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              CONTACT FORM �
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

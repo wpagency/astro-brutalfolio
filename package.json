@@ -1,0 +1,60 @@
+{
+  "name": "astro-brutalfolio",
+  "version": "1.0.0",
+  "description": "Brutalist portfolio theme with multilingual support (EN/ES/FR), GSAP animations, and React islands. By WP Agency",
+  "author": "WP Agency <hello@wpagency.xyz>",
+  "license": "MIT",
+  "homepage": "https://brutalfolio.wpagency.space",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpagency/astro-brutalfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/wpagency/astro-brutalfolio/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-theme",
+    "brutalist",
+    "portfolio",
+    "multilingual",
+    "i18n",
+    "gsap",
+    "framer-motion",
+    "react-islands",
+    "open-source",
+    "wpagency",
+    "agency-template"
+  ],
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/tailwind": "^5.1.2",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "astro": "^5.0.8",
+    "framer-motion": "^12.23.12",
+    "gsap": "^3.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.7.2"
+  }
+}

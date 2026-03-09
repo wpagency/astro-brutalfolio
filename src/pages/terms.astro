@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Terms of Service | BrutalFolio';
+const pageDescription = 'Brutal terms. No fine print. Just straight talk.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12 border-brutal border-brutal-black bg-brutal-yellow p-8 shadow-brutal-xl">
+          <h1 class="font-display font-black text-5xl mb-4">TERMS OF SERVICE</h1>
+          <p class="font-mono text-sm">Last updated: {new Date().toLocaleDateString()}</p>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-8">
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-red">1. WE BUILD, YOU PAY</h2>
+            <p class="mb-4">Simple. We create WordPress sites that don't suck. You pay us for it. No hidden fees, no surprise charges, no BS.</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>50% upfront, 50% on delivery</li>
+              <li>No refunds after work begins</li>
+              <li>Prices are final, non-negotiable</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-blue">2. OUR WORK, OUR STANDARDS</h2>
+            <p class="mb-4">We build sites our way. The brutal way. The right way.</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>No page builders, ever</li>
+              <li>Custom code only</li>
+              <li>Performance is non-negotiable</li>
+              <li>We don't do "quick fixes"</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-green">3. YOUR RESPONSIBILITIES</h2>
+            <p class="mb-4">You have a job too. Do it.</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>Provide content on time</li>
+              <li>Give feedback within 48 hours</li>
+              <li>Pay invoices within 7 days</li>
+              <li>Don't ask for rounded corners</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-purple">4. INTELLECTUAL PROPERTY</h2>
+            <p class="mb-4">What's yours is yours. What's ours is ours.</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>You own your content</li>
+              <li>We own our code until full payment</li>
+              <li>After payment, code transfers to you</li>
+              <li>We can showcase the work in our portfolio</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4 text-brutal-yellow">5. WARRANTIES & LIABILITY</h2>
+            <p class="mb-4">We guarantee our work. Period.</p>
+            <ul class="list-disc list-inside space-y-2 font-mono">
+              <li>30-day bug fix guarantee</li>
+              <li>99.9% uptime commitment</li>
+              <li>Performance benchmarks met or fixed</li>
+              <li>No liability for your business decisions</li>
+            </ul>
+          </div>
+
+          <div class="border-brutal border-brutal-black bg-brutal-black text-brutal-white p-8 shadow-brutal">
+            <h2 class="font-display font-black text-2xl mb-4">6. THE BOTTOM LINE</h2>
+            <p class="text-xl font-bold">We build exceptional WordPress sites. You pay us fairly. Everyone wins. No lawyers needed.</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 text-center">
+          <p class="font-mono text-sm mb-4">Questions? Issues? Want to argue about these terms?</p>
+          <a href="/contact" class="inline-block px-8 py-4 bg-brutal-yellow text-brutal-black font-black text-xl uppercase border-4 border-brutal-black shadow-brutal hover:shadow-brutal-lg hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+            CONTACT US �
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

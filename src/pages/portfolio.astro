@@ -1,0 +1,497 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrutalCursor from '../components/islands/BrutalCursor';
+import ScrollAnimations from '../components/islands/ScrollAnimations';
+
+const pageTitle = 'Portfolio | BrutalFolio - Our Best Work';
+const pageDescription = 'Case studies and success stories. Real projects, real results, real impact.';
+
+// Categorized projects for better organization
+const featuredProjects = [
+  {
+    title: 'Apex Fitness Studio',
+    category: 'FITNESS PLATFORM',
+    url: 'example-fitness.com',
+    stats: {
+      programs: 'Elite',
+      athletes: '100+',
+      results: 'Proven'
+    },
+    description: 'Elite fitness training & performance coaching platform. Custom athlete transformations, sports performance optimization, body composition programs. Video-driven modern design.',
+    color: 'bg-brutal-red',
+    year: 'Active',
+    featured: true
+  },
+  {
+    title: 'Digital Forge Studio',
+    category: 'PORTFOLIO SITE',
+    url: 'example-studio.com',
+    stats: {
+      stack: 'Next.js',
+      performance: '98/100',
+      design: 'Glitch'
+    },
+    description: 'Portfolio showcasing dark aesthetic with glitch effects. Built with Next.js, featuring advanced animations and cyber-punk design language.',
+    color: 'bg-brutal-purple',
+    year: 'Active',
+    featured: true
+  }
+];
+
+const communityProjects = [
+  {
+    title: 'Adventure Trail Forums',
+    category: 'OUTDOOR FORUM',
+    url: 'example-trails.com',
+    stats: {
+      years: '15+',
+      members: '50K+',
+      posts: '1M+'
+    },
+    description: 'Outdoor Enthusiast Forums - Continuous operation since 2009. Built to survive the social media era, still thriving with passionate community engagement.',
+    color: 'bg-brutal-yellow',
+    year: '2009-Present'
+  },
+  {
+    title: 'Rider Community Hub',
+    category: 'MOTORSPORTS FORUM',
+    url: 'example-riders.com',
+    stats: {
+      years: '15+',
+      uptime: '99.9%',
+      active: '10K+'
+    },
+    description: 'Motorsports Enthusiast Forums with 10+ years of operation. Survived social media competition through superior UX and community focus.',
+    color: 'bg-brutal-blue',
+    year: '2009-Present'
+  },
+  {
+    title: 'Gearhead Central',
+    category: 'ENGINE FORUM',
+    url: 'example-engines.com',
+    stats: {
+      niche: 'Focused',
+      ux: 'Modern',
+      community: 'Passionate'
+    },
+    description: 'Engine enthusiast forum featuring modern UX design and passionate community platform. Specialized niche with dedicated user base.',
+    color: 'bg-brutal-orange',
+    year: 'Active'
+  },
+  {
+    title: 'Quad Nation Network',
+    category: 'DUAL PLATFORM',
+    url: 'example-network.com',
+    stats: {
+      platforms: '2',
+      integration: '100%',
+      users: '25K+'
+    },
+    description: 'WordPress + Forum dual platform. Unified brand experience with custom forum integration and community-driven content.',
+    color: 'bg-brutal-red',
+    year: 'Active'
+  }
+];
+
+const businessProjects = [
+  {
+    title: 'Craft Goods Market',
+    category: 'E-COMMERCE',
+    url: 'example-shop.com',
+    stats: {
+      products: '500+',
+      compliance: '100%',
+      growth: '+40%/yr'
+    },
+    description: 'Complete WordPress + WooCommerce management. Custom product wiki integration, regulatory compliance features, monthly SEO optimization.',
+    color: 'bg-brutal-green',
+    year: 'Ongoing'
+  },
+  {
+    title: 'Auto Parts Depot',
+    category: 'AUTO DEALER',
+    url: 'example-auto.com',
+    stats: {
+      inventory: '1000+',
+      nationwide: 'Yes',
+      services: '3'
+    },
+    description: 'Used auto parts & vehicle dealer platform. Complete "We Buy Cars" system with online shopping and nationwide shipping integration.',
+    color: 'bg-brutal-yellow',
+    year: 'Active'
+  },
+  {
+    title: 'Building Supply Co',
+    category: 'BUSINESS SITE',
+    url: 'example-materials.com',
+    stats: {
+      speed: '0.6s',
+      maintenance: 'Zero',
+      uptime: '100%'
+    },
+    description: 'Transformed from WordPress to Astro. Running on autopilot with self-maintaining performance and lightning-fast load times.',
+    color: 'bg-brutal-purple',
+    year: '2023'
+  }
+];
+
+// Combine all projects for grid display
+const projects = [...featuredProjects, ...communityProjects, ...businessProjects];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-brutal-black text-brutal-white pt-32">
+    <!-- Animated Shapes -->
+    <div class="absolute top-20 left-20 w-64 h-64 border-[20px] border-brutal-yellow animate-float"></div>
+    <div class="absolute bottom-20 right-20 w-48 h-48 bg-brutal-blue transform rotate-45 animate-float animation-delay-400"></div>
+
+    <div class="container mx-auto px-edge relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display font-black text-[clamp(3rem,10vw,8rem)] leading-[0.85] mb-8">
+          <span class="block text-brutal-yellow">OUR WORK</span>
+          <span class="block text-outline -mt-4">SPEAKS LOUDER</span>
+        </h1>
+        <p class="text-2xl md:text-3xl font-display font-bold">
+          Real projects. Real results.
+          <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black transform rotate-1 shadow-brutal ml-2">Real impact</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section class="py-section bg-brutal-black text-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="mb-12">
+        <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-4">
+          <span class="inline-block px-6 py-3 bg-brutal-red transform -rotate-1">
+            FEATURED PROJECT
+          </span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Project Info -->
+        <div>
+          <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black font-mono font-bold mb-4">
+            FITNESS PLATFORM
+          </span>
+          <h3 class="font-display font-black text-[clamp(2rem,5vw,3.5rem)] mb-6 text-brutal-white">
+            Apex Fitness Studio
+          </h3>
+          <p class="text-xl mb-8 font-bold">
+            Elite fitness training & performance coaching platform. Custom athlete transformations, hockey performance optimization, and body composition programs.
+          </p>
+
+          <!-- Key Features -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4">
+              <span class="block w-6 h-6 bg-brutal-red flex-shrink-0 mt-1"></span>
+              <div>
+                <div class="font-bold text-brutal-yellow">Video-Driven Design</div>
+                <div>Immersive hero section with custom video controls</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="block w-6 h-6 bg-brutal-red flex-shrink-0 mt-1"></span>
+              <div>
+                <div class="font-bold text-brutal-yellow">Elite Programs</div>
+                <div>Hockey performance, physique development, personal training</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="block w-6 h-6 bg-brutal-red flex-shrink-0 mt-1"></span>
+              <div>
+                <div class="font-bold text-brutal-yellow">Modern Tech Stack</div>
+                <div>Service workers, schema.org, advanced form handling</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="block w-6 h-6 bg-brutal-red flex-shrink-0 mt-1"></span>
+              <div>
+                <div class="font-bold text-brutal-yellow">Transformation Gallery</div>
+                <div>Showcasing real athlete results and success stories</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mb-8">
+            <div class="p-4 border-2 border-brutal-yellow">
+              <div class="text-2xl font-black text-brutal-yellow">100+</div>
+              <div class="font-mono text-sm">Athletes</div>
+            </div>
+            <div class="p-4 border-2 border-brutal-yellow">
+              <div class="text-2xl font-black text-brutal-yellow">Elite</div>
+              <div class="font-mono text-sm">Programs</div>
+            </div>
+            <div class="p-4 border-2 border-brutal-yellow">
+              <div class="text-2xl font-black text-brutal-yellow">Proven</div>
+              <div class="font-mono text-sm">Results</div>
+            </div>
+          </div>
+
+          <a
+            href="https://example-fitness.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ButtonBrutalPrimary inline-flex items-center gap-2"
+          >
+            VISIT LIVE SITE →
+          </a>
+        </div>
+
+        <!-- Screenshot Preview -->
+        <div class="relative">
+          <div class="border-mega border-brutal-yellow shadow-brutal-xl bg-brutal-black overflow-hidden">
+            <div class="bg-brutal-yellow p-3 border-b-mega border-brutal-black flex items-center gap-2">
+              <span class="w-3 h-3 bg-brutal-red border-2 border-brutal-black"></span>
+              <span class="w-3 h-3 bg-brutal-green border-2 border-brutal-black"></span>
+              <span class="w-3 h-3 bg-brutal-blue border-2 border-brutal-black"></span>
+              <span class="ml-auto font-mono text-sm text-brutal-black font-bold">example-fitness.com</span>
+            </div>
+            <div class="relative aspect-video bg-gradient-to-br from-brutal-black to-brutal-black/90">
+              <!-- Placeholder for screenshot -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">💪</div>
+                  <div class="font-display font-black text-2xl text-brutal-yellow mb-2">ELITE FITNESS</div>
+                  <div class="font-mono text-brutal-white/60">Performance Coaching Platform</div>
+                </div>
+              </div>
+              <!-- Live indicator -->
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 bg-brutal-green text-brutal-black font-mono text-xs font-bold">
+                  <span class="w-2 h-2 bg-brutal-black animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-brutal-red opacity-50 -z-10"></div>
+          <div class="absolute -top-4 -left-4 w-24 h-24 border-8 border-brutal-yellow opacity-50 -z-10 rotate-12"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Sections -->
+  <section class="py-section bg-brutal-gray">
+    <div class="container mx-auto px-edge">
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="p-6 bg-brutal-white border-brutal border-brutal-black shadow-brutal text-center">
+          <div class="text-4xl font-black text-brutal-yellow">15+</div>
+          <div class="font-mono text-sm uppercase mt-2">Years Running</div>
+        </div>
+        <div class="p-6 bg-brutal-white border-brutal border-brutal-black shadow-brutal text-center">
+          <div class="text-4xl font-black text-brutal-blue">100K+</div>
+          <div class="font-mono text-sm uppercase mt-2">Active Users</div>
+        </div>
+        <div class="p-6 bg-brutal-white border-brutal border-brutal-black shadow-brutal text-center">
+          <div class="text-4xl font-black text-brutal-green">99.9%</div>
+          <div class="font-mono text-sm uppercase mt-2">Uptime</div>
+        </div>
+        <div class="p-6 bg-brutal-white border-brutal border-brutal-black shadow-brutal text-center">
+          <div class="text-4xl font-black text-brutal-purple">24/7</div>
+          <div class="font-mono text-sm uppercase mt-2">Support</div>
+        </div>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="mb-20">
+        <h3 class="font-display font-black text-3xl mb-8">
+          <span class="inline-block px-4 py-2 bg-brutal-red text-brutal-white">
+            FEATURED PROJECTS
+          </span>
+        </h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 StaggerAnimation">
+          {featuredProjects.map((project, index) => (
+            <a
+              href={`https://${project.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`CardBrutal group cursor-pointer block`}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <!-- Color Bar -->
+              <div class={`h-64 ${project.color} relative overflow-hidden`}>
+                <!-- Year Badge -->
+                <div class="absolute top-4 right-4 px-3 py-1 bg-brutal-black text-brutal-white font-mono text-sm">
+                  {project.year}
+                </div>
+                <!-- Category -->
+                <div class="absolute bottom-4 left-4">
+                  <span class="inline-block px-4 py-2 bg-brutal-white text-brutal-black font-mono font-bold border-brutal border-brutal-black">
+                    {project.category}
+                  </span>
+                </div>
+                <!-- Hover Effect -->
+                <div class="absolute inset-0 bg-brutal-black/0 group-hover:bg-brutal-black/20 transition-colors duration-300"></div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-8 bg-brutal-white">
+                <h3 class="font-display font-black text-3xl mb-4">
+                  {project.title}
+                </h3>
+                <p class="text-lg mb-6">
+                  {project.description}
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-4">
+                  {Object.entries(project.stats).map(([key, value]) => (
+                    <div class="text-center">
+                      <div class="font-black text-xl">{value}</div>
+                      <div class="font-mono text-xs uppercase text-brutal-black/60">{key}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- View Site -->
+                <div class="mt-6 flex items-center justify-between">
+                  <span class="font-display font-black text-lg group-hover:text-brutal-blue transition-colors">
+                    VISIT SITE →
+                  </span>
+                  <span class="font-mono text-sm text-brutal-black/60">
+                    {project.url}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Community Projects -->
+      <div class="mb-20">
+        <h3 class="font-display font-black text-3xl mb-8">
+          <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black transform -rotate-1">
+            COMMUNITY PLATFORMS
+          </span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {communityProjects.map((project, index) => (
+            <a
+              href={`https://${project.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`group relative border-brutal border-brutal-black shadow-brutal-lg overflow-hidden animate-on-scroll hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all cursor-pointer block`}
+              style={`animation-delay: ${index * 50}ms`}
+            >
+              <div class={`h-32 ${project.color} relative overflow-hidden`}>
+                <div class="absolute bottom-2 left-2">
+                  <span class="inline-block px-2 py-1 bg-brutal-black text-brutal-white font-mono text-xs">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6 bg-brutal-white">
+                <h4 class="font-display font-bold text-xl mb-2">
+                  {project.title}
+                </h4>
+                <p class="text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs text-brutal-black/60">
+                    {project.url}
+                  </span>
+                  <span class="text-brutal-blue font-bold">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Business Projects -->
+      <div class="mb-20">
+        <h3 class="font-display font-black text-3xl mb-8">
+          <span class="inline-block px-4 py-2 bg-brutal-green text-brutal-black transform rotate-1">
+            BUSINESS SOLUTIONS
+          </span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {businessProjects.map((project, index) => (
+            <a
+              href={`https://${project.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`group relative border-brutal border-brutal-black shadow-brutal-lg overflow-hidden animate-on-scroll hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all cursor-pointer block`}
+              style={`animation-delay: ${index * 50}ms`}
+            >
+              <div class={`h-40 ${project.color} relative overflow-hidden`}>
+                <div class="absolute top-4 right-4 px-2 py-1 bg-brutal-white text-brutal-black font-mono text-xs font-bold">
+                  {project.year}
+                </div>
+                <div class="absolute bottom-4 left-4">
+                  <span class="inline-block px-3 py-1 bg-brutal-black text-brutal-white font-mono text-xs">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6 bg-brutal-white">
+                <h4 class="font-display font-bold text-xl mb-3">
+                  {project.title}
+                </h4>
+                <p class="text-sm mb-4">
+                  {project.description}
+                </p>
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                  {Object.entries(project.stats).slice(0, 3).map(([key, value]) => (
+                    <div class="text-center p-2 bg-brutal-gray">
+                      <div class="font-bold text-sm">{value}</div>
+                      <div class="font-mono text-xs uppercase">{key}</div>
+                    </div>
+                  ))}
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-mono text-xs">
+                    {project.url}
+                  </span>
+                  <span class="text-brutal-green font-bold text-lg">
+                    →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-section bg-brutal-yellow">
+    <div class="container mx-auto px-edge text-center">
+      <h2 class="font-display font-black text-[clamp(2rem,8vw,5rem)] mb-8">
+        WANT TO BE NEXT?
+      </h2>
+      <p class="text-2xl font-bold mb-12 max-w-3xl mx-auto">
+        Join the ranks of successful businesses. Let's build something extraordinary together.
+      </p>
+      <a href="/contact" class="inline-block px-12 py-6 bg-brutal-black text-brutal-white font-black text-xl uppercase border-brutal border-brutal-black shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all">
+        START YOUR PROJECT →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+

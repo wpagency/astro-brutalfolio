@@ -1,0 +1,250 @@
+---
+import Button from '../ui/Button.astro';
+import AnimatedCounter from '../islands/AnimatedCounter';
+import MagneticButton from '../islands/MagneticButton';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brutal-black pt-32 pb-20">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 grain opacity-[0.02] z-[1]"></div>
+
+  <!-- Video-like scan lines effect -->
+  <div class="absolute inset-0 pointer-events-none z-[2]">
+    <div class="h-px bg-brutal-white/5 animate-scan"></div>
+  </div>
+
+  <!-- Massive Geometric Shapes (clipped to prevent horizontal scroll) -->
+  <div class="absolute top-0 left-0 w-96 h-96 -translate-y-24 -translate-x-24 bg-brutal-yellow transform rotate-12 opacity-20 animate-float z-[1] hidden lg:block"></div>
+  <div class="absolute bottom-0 right-0 w-[600px] h-[600px] translate-y-32 translate-x-32 border-[40px] border-brutal-blue transform -rotate-12 opacity-10 animate-float animation-delay-400 z-[1] hidden lg:block"></div>
+
+  <!-- Grid Pattern -->
+  <div class="absolute inset-0 opacity-5 z-[1]">
+    <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 79px, #FFD93D 79px, #FFD93D 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #FFD93D 79px, #FFD93D 80px);"></div>
+  </div>
+
+  <!-- Floating Brand Elements -->
+  <div class="absolute top-[20%] right-[10%] animate-float z-[3] hidden lg:block">
+    <div class="w-32 h-32 border-8 border-brutal-red bg-brutal-black flex items-center justify-center shadow-brutal-xl transform rotate-12">
+      <span class="font-display font-black text-brutal-red text-4xl">WP</span>
+    </div>
+  </div>
+
+  <div class="absolute bottom-[20%] left-[5%] animate-float animation-delay-600 z-[3] hidden lg:block">
+    <div class="w-48 h-48 bg-brutal-green shadow-brutal-xl transform -rotate-6">
+      <div class="h-full flex items-center justify-center">
+        <span class="font-display font-black text-brutal-black text-6xl">XYZ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagonal accent -->
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brutal-yellow/5 to-transparent transform skew-x-12 z-[1]"></div>
+
+  <div class="container mx-auto px-edge relative z-20">
+    <div class="max-w-7xl mx-auto">
+      <!-- Main Content -->
+      <div class="space-y-8">
+        <!-- Status Bar -->
+        <div class="flex items-center gap-4 mb-12">
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-brutal-green text-brutal-black font-mono text-sm font-bold shadow-brutal-sm">
+            <span class="w-2 h-2 bg-brutal-black rounded-full animate-pulse"></span>
+            {t('hero.liveSince')}
+          </span>
+          <span class="px-4 py-2 border-2 border-brutal-yellow text-brutal-yellow font-mono text-sm">
+            {t('hero.yearsRunning')}
+          </span>
+        </div>
+
+        <!-- MASSIVE Headline with staggered animation -->
+        <h1 class="font-display font-black leading-[0.8] text-brutal-white">
+          <span class="block text-[clamp(3rem,12vw,10rem)] animate-slide-up">
+            <span class="inline-block GlitchText hover:text-brutal-yellow transition-colors" data-text={t('hero.headline1')}>{t('hero.headline1')}</span>
+          </span>
+          <span class="block text-[clamp(3rem,12vw,10rem)] -mt-4 md:-mt-8 animate-slide-up animation-delay-200">
+            <span class="text-outline-white GlitchText hover:text-brutal-blue transition-colors" data-text={t('hero.headline2')}>{t('hero.headline2')}</span>
+          </span>
+          <span class="block -mt-6 md:-mt-12 animate-slide-up animation-delay-400">
+            <span class="inline-block text-[clamp(2.5rem,10vw,8rem)] bg-brutal-yellow text-brutal-black px-4 md:px-8 py-2 md:py-4 transform -rotate-1 shadow-brutal-xl hover:rotate-0 hover:shadow-brutal transition-all BrutalPulse">
+              {t('hero.headline3')}
+            </span>
+          </span>
+        </h1>
+
+        <!-- Dynamic Tagline -->
+        <div class="mt-12 space-y-4">
+          <p class="text-2xl md:text-4xl font-display font-bold text-brutal-white max-w-4xl animate-fade-in animation-delay-600">
+            {t('hero.tagline')}
+            <span class="inline-block px-4 py-2 bg-brutal-blue text-brutal-black transform rotate-1 shadow-brutal ml-2">{t('hero.taglineHighlight')}</span>
+          </p>
+
+          <!-- Feature Pills -->
+          <div class="flex flex-wrap gap-3 mt-6 animate-fade-in animation-delay-800">
+            <span class="px-4 py-2 border-2 border-brutal-red text-brutal-red font-mono text-sm font-bold">{t('hero.noRoundedCorners')}</span>
+            <span class="px-4 py-2 border-2 border-brutal-green text-brutal-green font-mono text-sm font-bold">{t('hero.noCompromises')}</span>
+            <span class="px-4 py-2 border-2 border-brutal-purple text-brutal-purple font-mono text-sm font-bold">{t('hero.noBs')}</span>
+          </div>
+        </div>
+
+        <!-- CTA Section with hover effects -->
+        <div class="flex flex-wrap gap-4 md:gap-6 pt-8 md:pt-12 animate-fade-in animation-delay-1000">
+          <a href="/contact" class="ButtonBrutalPrimary group inline-flex items-center gap-3">
+            {t('hero.startProject')}
+            <svg class="w-6 h-6 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="/portfolio" class="ButtonBrutalSecondary group inline-flex items-center gap-3">
+            {t('hero.seeWork')}
+          </a>
+        </div>
+
+        <!-- Live Stats Bar -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 pt-12 md:pt-16 animate-fade-in animation-delay-1200">
+          <div class="group border-2 md:border-4 border-brutal-yellow bg-brutal-black p-4 md:p-6 hover:bg-brutal-yellow hover:shadow-brutal-lg cursor-pointer">
+            <div class="text-3xl md:text-5xl font-display font-black text-brutal-yellow group-hover:text-brutal-black">
+              <AnimatedCounter client:visible end={8} />
+            </div>
+            <div class="text-sm font-mono uppercase mt-2 text-brutal-white group-hover:text-brutal-black">{t('stats.liveProjects')}</div>
+          </div>
+          <div class="group border-2 md:border-4 border-brutal-blue bg-brutal-black p-4 md:p-6 hover:bg-brutal-blue hover:shadow-brutal-lg cursor-pointer">
+            <div class="text-3xl md:text-5xl font-display font-black text-brutal-blue group-hover:text-brutal-black">
+              <AnimatedCounter client:visible end={100} suffix="K+" />
+            </div>
+            <div class="text-sm font-mono uppercase mt-2 text-brutal-white group-hover:text-brutal-black">{t('stats.activeUsers')}</div>
+          </div>
+          <div class="group border-2 md:border-4 border-brutal-green bg-brutal-black p-4 md:p-6 hover:bg-brutal-green hover:shadow-brutal-lg cursor-pointer">
+            <div class="text-3xl md:text-5xl font-display font-black text-brutal-green group-hover:text-brutal-black">
+              <AnimatedCounter client:visible end={99.9} suffix="%" decimals={1} />
+            </div>
+            <div class="text-sm font-mono uppercase mt-2 text-brutal-white group-hover:text-brutal-black">{t('stats.uptime')}</div>
+          </div>
+          <div class="group border-2 md:border-4 border-brutal-red bg-brutal-black p-4 md:p-6 hover:bg-brutal-red hover:shadow-brutal-lg cursor-pointer">
+            <div class="text-3xl md:text-5xl font-display font-black text-brutal-red group-hover:text-brutal-black">
+              <AnimatedCounter client:visible end={0.6} suffix="s" decimals={1} />
+            </div>
+            <div class="text-sm font-mono uppercase mt-2 text-brutal-white group-hover:text-brutal-black">{t('stats.loadTime')}</div>
+          </div>
+        </div>
+
+        <!-- Client Logos/Names -->
+        <div class="pt-12 border-t-4 border-brutal-yellow/20 mt-16 animate-fade-in animation-delay-1400">
+          <p class="font-mono text-sm text-brutal-white/60 mb-6">{t('hero.trustedBy')}</p>
+          <div class="flex flex-wrap gap-6 items-center">
+            <span class="font-display font-bold text-brutal-yellow hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client1')}</span>
+            <span class="font-display font-bold text-brutal-blue hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client2')}</span>
+            <span class="font-display font-bold text-brutal-green hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client3')}</span>
+            <span class="font-display font-bold text-brutal-purple hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client4')}</span>
+            <span class="font-display font-bold text-brutal-red hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client5')}</span>
+            <span class="font-display font-bold text-brutal-yellow hover:text-brutal-white cursor-pointer transition-colors">{t('hero.client6')}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  @keyframes scroll-indicator {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(12px);
+      opacity: 0.3;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-scan {
+    animation: scan 8s linear infinite;
+  }
+
+  .animate-scroll-indicator {
+    animation: scroll-indicator 1.5s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
+
+  .animation-delay-1400 {
+    animation-delay: 1400ms;
+  }
+
+  .text-outline-white {
+    color: transparent;
+    -webkit-text-stroke: 3px #ffffff;
+    text-stroke: 3px #ffffff;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+
+  .text-outline-white:hover {
+    -webkit-text-stroke: 3px #0066FF;
+    text-stroke: 3px #0066FF;
+  }
+</style>
+
+

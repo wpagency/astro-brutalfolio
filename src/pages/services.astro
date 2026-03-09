@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BrutalCursor from '../components/islands/BrutalCursor';
+import ScrollAnimations from '../components/islands/ScrollAnimations';
+
+const pageTitle = 'Our Services | BrutalFolio - Premium WordPress Solutions';
+const pageDescription = 'WordPress development, e-commerce, performance optimization, and maintenance services. No BS, just results.';
+
+const services = [
+  {
+    title: 'WordPress Development',
+    description: 'Custom themes and plugins built from scratch. No bloated builders, no compromises.',
+    features: [
+      'Custom theme development',
+      'Plugin development',
+      'Gutenberg blocks',
+      'Headless WordPress',
+      'API integrations',
+      'Migration services'
+    ],
+    price: 'From $5,000',
+    color: 'bg-brutal-yellow'
+  },
+  {
+    title: 'E-Commerce Solutions',
+    description: 'WooCommerce stores that convert. Fast, secure, and scalable.',
+    features: [
+      'WooCommerce setup',
+      'Custom checkout flows',
+      'Payment integrations',
+      'Inventory management',
+      'Subscription systems',
+      'B2B solutions'
+    ],
+    price: 'From $8,000',
+    color: 'bg-brutal-blue'
+  },
+  {
+    title: 'Performance Optimization',
+    description: 'Make your site lightning fast. Sub-second load times guaranteed.',
+    features: [
+      'Core Web Vitals optimization',
+      'Database optimization',
+      'CDN implementation',
+      'Image optimization',
+      'Caching strategies',
+      'Code minification'
+    ],
+    price: 'From $2,500',
+    color: 'bg-brutal-green'
+  },
+  {
+    title: 'Maintenance & Support',
+    description: '24/7 monitoring, updates, and support. Sleep soundly.',
+    features: [
+      '24/7 monitoring',
+      'Security updates',
+      'Plugin updates',
+      'Daily backups',
+      'Performance monitoring',
+      'Priority support'
+    ],
+    price: 'From $500/mo',
+    color: 'bg-brutal-purple'
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-brutal-gray pt-32">
+    <!-- Geometric Shapes -->
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-brutal-yellow transform rotate-45"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 border-[20px] border-brutal-blue transform -rotate-12"></div>
+
+    <div class="container mx-auto px-edge relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display font-black text-[clamp(3rem,10vw,8rem)] leading-[0.85] mb-8">
+          <span class="block text-outline">SERVICES</span>
+          <span class="block text-brutal-black -mt-4">THAT DELIVER</span>
+        </h1>
+        <p class="text-2xl md:text-3xl font-display font-bold">
+          No fluff. No excuses. Just
+          <span class="inline-block px-4 py-2 bg-brutal-yellow transform -rotate-1 shadow-brutal">results</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {services.map((service, index) => (
+          <div
+            class={`relative p-12 border-mega border-brutal-black shadow-brutal-xl ${service.color} animate-on-scroll transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0 transition-transform`}
+          >
+            <!-- Big Number -->
+            <div class="absolute -top-12 -left-12 text-[180px] font-black text-brutal-black/20 leading-none">
+              0{index + 1}
+            </div>
+
+            <div class="relative z-10">
+              <h2 class="font-display font-black text-4xl mb-4 uppercase">
+                {service.title}
+              </h2>
+              <p class="text-xl font-bold mb-8">
+                {service.description}
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-3 mb-8">
+                {service.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <span class="inline-block w-6 h-6 bg-brutal-black mt-1"></span>
+                    <span class="text-lg font-bold">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Price -->
+              <div class="flex items-center justify-between">
+                <span class="text-3xl font-black">{service.price}</span>
+                <Button variant="primary" href="#contact" class="shadow-brutal">
+                  GET STARTED →
+                </Button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-section bg-brutal-black text-brutal-white">
+    <div class="container mx-auto px-edge text-center">
+      <h2 class="font-display font-black text-[clamp(2rem,8vw,6rem)] mb-8">
+        READY TO BUILD?
+      </h2>
+      <p class="text-2xl mb-12 max-w-3xl mx-auto">
+        Let's create something extraordinary. No long forms, no sales calls. Just tell us what you need.
+      </p>
+      <Button variant="primary" size="large" href="/contact" class="bg-brutal-yellow text-brutal-black border-brutal-white">
+        START YOUR PROJECT →
+      </Button>
+    </div>
+  </section>
+</BaseLayout>
+

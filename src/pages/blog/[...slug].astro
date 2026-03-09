@@ -1,0 +1,306 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BrutalCursor from "../../components/islands/BrutalCursor";
+import ScrollAnimations from "../../components/islands/ScrollAnimations";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
+// Get related posts (same tags)
+const allPosts = await getCollection("blog", ({ data }) => data.draft !== true);
+const relatedPosts = allPosts
+  .filter((p) => p.slug !== post.slug)
+  .filter((p) => p.data.tags.some((tag) => post.data.tags.includes(tag)))
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={`${post.data.title} | BrutalFolio Blog`}
+  description={post.data.description}
+>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain">
+  </div>
+
+  <!-- Article Header -->
+  <article class="pt-32">
+    <header
+      class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-brutal-black text-brutal-white"
+    >
+      <!-- Featured Image Background -->
+      {
+        post.data.image && (
+          <div class="absolute inset-0">
+            <img
+              src={post.data.image}
+              alt={post.data.imageAlt || post.data.title}
+              class="w-full h-full object-cover opacity-30"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brutal-black via-brutal-black/80 to-brutal-black/60" />
+          </div>
+        )
+      }
+
+      <!-- Geometric Shapes -->
+      <div
+        class="absolute top-20 right-20 w-64 h-64 bg-brutal-yellow transform rotate-45 opacity-20 mix-blend-multiply"
+      >
+      </div>
+      <div
+        class="absolute bottom-20 left-20 w-48 h-48 border-[20px] border-brutal-blue transform -rotate-12 opacity-20"
+      >
+      </div>
+
+      <div class="container mx-auto px-edge relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <!-- Meta -->
+          <div class="flex flex-wrap gap-4 mb-8">
+            <span
+              class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black font-mono text-sm font-bold"
+            >
+              {formatDate(post.data.date)}
+            </span>
+            <span
+              class="inline-block px-4 py-2 bg-brutal-blue text-brutal-white font-mono text-sm font-bold"
+            >
+              By {post.data.author}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1
+            class="font-display font-black text-[clamp(2rem,8vw,5rem)] leading-[0.9] mb-8"
+          >
+            {post.data.title}
+          </h1>
+
+          <!-- Description -->
+          <p class="text-xl md:text-2xl font-bold max-w-3xl">
+            {post.data.description}
+          </p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-3 mt-8">
+            {
+              post.data.tags.map((tag) => (
+                <span class="inline-block px-4 py-2 border-2 border-brutal-white font-mono text-sm hover:bg-brutal-white hover:text-brutal-black transition-colors cursor-pointer">
+                  #{tag}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="py-section bg-brutal-white">
+      <div class="container mx-auto px-edge">
+        <div class="max-w-4xl mx-auto">
+          <!-- Prose Content with Brutal Styling -->
+          <div class="prose-content">
+            <Content />
+          </div>
+
+          <style>
+            .prose-content {
+              @apply text-lg leading-relaxed;
+            }
+
+            .prose-content h1,
+            .prose-content h2,
+            .prose-content h3 {
+              @apply font-display font-black uppercase mt-12 mb-6;
+            }
+
+            .prose-content h2 {
+              @apply text-4xl border-l-8 border-brutal-yellow pl-6 -ml-6;
+            }
+
+            .prose-content h3 {
+              @apply text-3xl text-brutal-black;
+            }
+
+            .prose-content h4 {
+              @apply text-2xl font-bold;
+            }
+
+            .prose-content p {
+              @apply text-lg leading-relaxed font-medium mb-6 text-brutal-black/90;
+            }
+
+            .prose-content strong {
+              @apply font-black text-brutal-black;
+            }
+
+            .prose-content a {
+              @apply text-brutal-blue font-bold underline decoration-4 underline-offset-4 hover:bg-brutal-yellow transition-colors;
+            }
+
+            .prose-content blockquote {
+              @apply border-l-8 border-brutal-black bg-brutal-gray p-6 my-8 font-bold italic;
+            }
+
+            .prose-content code:not(pre code) {
+              @apply bg-brutal-black text-brutal-yellow px-2 py-1 font-mono text-sm;
+            }
+
+            .prose-content pre {
+              @apply bg-brutal-black text-brutal-white p-6 border-4 border-brutal-black shadow-brutal-xl overflow-x-auto my-8;
+            }
+
+            .prose-content pre code {
+              @apply bg-transparent text-brutal-white p-0 font-mono text-sm;
+            }
+
+            .prose-content ul {
+              @apply space-y-2 my-6;
+            }
+
+            .prose-content ol {
+              @apply space-y-2 my-6;
+              counter-reset: item;
+            }
+
+            .prose-content li {
+              @apply pl-8 relative;
+            }
+
+            .prose-content ul li::before {
+              content: "▪";
+              @apply absolute left-0 text-brutal-yellow font-black text-2xl;
+            }
+
+            .prose-content ol li {
+              counter-increment: item;
+            }
+
+            .prose-content ol li::before {
+              content: counter(item) ".";
+              @apply absolute left-0 text-brutal-yellow font-black text-xl;
+            }
+
+            .prose-content table {
+              @apply w-full border-4 border-brutal-black my-8;
+            }
+
+            .prose-content th {
+              @apply bg-brutal-black text-brutal-white p-4 font-black uppercase text-left;
+            }
+
+            .prose-content td {
+              @apply border-2 border-brutal-black p-4;
+            }
+
+            .prose-content tr:nth-child(even) {
+              @apply bg-brutal-gray;
+            }
+
+            .prose-content img {
+              @apply w-full h-auto border-4 border-brutal-black shadow-brutal-xl my-8;
+            }
+
+            .prose-content hr {
+              @apply border-t-4 border-brutal-black my-12;
+            }
+          </style>
+
+          <!-- Author Box -->
+          <div
+            class="mt-16 p-8 border-mega border-brutal-black bg-brutal-yellow shadow-brutal-xl"
+          >
+            <h3 class="font-display font-black text-2xl mb-4 uppercase">
+              About the Author
+            </h3>
+            <p class="text-lg font-bold">
+              The BrutalFolio team has been building WordPress sites for years.
+              We've seen it all, broken it all, and fixed it all. Now we share
+              what actually works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    {
+      relatedPosts.length > 0 && (
+        <section class="py-section bg-brutal-gray">
+          <div class="container mx-auto px-edge">
+            <h2 class="font-display font-black text-5xl mb-12 text-center">
+              <span class="inline-block px-8 py-4 bg-brutal-black text-brutal-white transform -rotate-2 shadow-brutal-xl">
+                KEEP READING
+              </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {relatedPosts.map((relPost, index) => (
+                <article
+                  class={`group border-brutal border-brutal-black shadow-brutal-lg bg-brutal-white p-6 transform ${index % 2 === 0 ? "rotate-1" : "-rotate-1"} hover:rotate-0 transition-all`}
+                >
+                  <span class="inline-block px-3 py-1 bg-brutal-black text-brutal-white font-mono text-xs mb-4">
+                    {formatDate(relPost.data.date)}
+                  </span>
+                  <h3 class="font-display font-bold text-xl mb-3 group-hover:text-brutal-blue transition-colors">
+                    <a href={`/blog/${relPost.slug}`} class="hover:underline">
+                      {relPost.data.title}
+                    </a>
+                  </h3>
+                  <a
+                    href={`/blog/${relPost.slug}`}
+                    class="inline-block font-display font-bold uppercase group-hover:translate-x-2 transition-transform"
+                  >
+                    Read →
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  <!-- Newsletter CTA -->
+  <section class="py-section bg-brutal-black text-brutal-white">
+    <div class="container mx-auto px-edge text-center">
+      <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-8">
+        DON'T MISS THE NEXT ONE
+      </h2>
+      <p class="text-xl font-bold mb-8 max-w-2xl mx-auto">
+        Get our best WordPress insights delivered straight to your inbox. No
+        spam, just value.
+      </p>
+      <a
+        href="/blog"
+        class="inline-block px-8 py-4 bg-brutal-yellow text-brutal-black font-black text-xl uppercase border-4 border-brutal-yellow shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all"
+      >
+        Back to Blog →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  height?: string;
+  width?: string;
+  className?: string;
+  rounded?: boolean;
+}
+
+const {
+  height = 'h-4',
+  width = 'w-full',
+  className = '',
+  rounded = false
+} = Astro.props;
+---
+
+<div
+  class={`LoadingSkeleton ${height} ${width} ${rounded ? 'rounded' : ''} ${className}`}
+  role="status"
+  aria-label="Loading..."
+>
+  <span class="sr-only">Loading...</span>
+</div>
+
+

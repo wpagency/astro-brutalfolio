@@ -1,0 +1,44 @@
+---
+import LoadingSkeleton from './LoadingSkeleton.astro';
+
+interface Props {
+  showImage?: boolean;
+}
+
+const { showImage = true } = Astro.props;
+---
+
+<div class="CardBrutal animate-pulse">
+  {showImage && (
+    <div class="h-48 border-b-brutal border-brutal-black">
+      <LoadingSkeleton height="h-full" />
+    </div>
+  )}
+
+  <div class="p-6 space-y-4">
+    <!-- Tags -->
+    <div class="flex gap-2">
+      <LoadingSkeleton width="w-16" height="h-6" />
+      <LoadingSkeleton width="w-20" height="h-6" />
+    </div>
+
+    <!-- Title -->
+    <LoadingSkeleton height="h-8" />
+    <LoadingSkeleton height="h-8" width="w-3/4" />
+
+    <!-- Description -->
+    <div class="space-y-2">
+      <LoadingSkeleton height="h-4" />
+      <LoadingSkeleton height="h-4" />
+      <LoadingSkeleton height="h-4" width="w-2/3" />
+    </div>
+
+    <!-- Footer -->
+    <div class="flex justify-between items-center pt-4">
+      <LoadingSkeleton width="w-24" height="h-4" />
+      <LoadingSkeleton width="w-16" height="h-6" />
+    </div>
+  </div>
+</div>
+
+

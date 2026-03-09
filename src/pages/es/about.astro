@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BrutalCursor from '../../components/islands/BrutalCursor';
+import ScrollAnimations from '../../components/islands/ScrollAnimations';
+import AnimatedCounter from '../../components/islands/AnimatedCounter';
+
+const pageTitle = 'Sobre Nosotros | BrutalFolio - La Historia Detrás del Brutalismo';
+const pageDescription = 'Desarrollo WordPress de élite desde 2009. Construimos sitios que se niegan a pasar desapercibidos y plataformas que sobreviven décadas.';
+
+const team = [
+  {
+    name: 'Los Constructores',
+    role: 'FULL STACK',
+    description: 'Arquitectos de WordPress que piensan en código, no en constructores de páginas.',
+    color: 'bg-brutal-yellow'
+  },
+  {
+    name: 'Los Optimizadores',
+    role: 'RENDIMIENTO',
+    description: 'Fanáticos de la velocidad que convierten cargas de 8 segundos en experiencias subsegundas.',
+    color: 'bg-brutal-blue'
+  },
+  {
+    name: 'Los Mantenedores',
+    role: 'CONFIABILIDAD',
+    description: 'Guardianes 24/7 que aseguran 99.9% de disponibilidad en todas las plataformas.',
+    color: 'bg-brutal-green'
+  }
+];
+
+const milestones = [
+  { year: '2009', event: 'Fundamos BrutalFolio', description: 'Comenzamos a construir sitios de WordPress que duran' },
+  { year: '2010', event: 'Primer Lanzamiento de Foro', description: 'TotallyYamaha y Polaris Star Power se lanzan' },
+  { year: '2015', event: 'Hito de 100K Usuarios', description: 'Las plataformas comunitarias alcanzan masa crítica' },
+  { year: '2020', event: 'Pivote de Pandemia', description: 'Cambio al desarrollo enfocado en rendimiento' },
+  { year: '2023', event: 'Migración a Astro', description: 'Adoptamos generación estática de sitios para velocidad' },
+  { year: '2024', event: 'Era del Neo-Brutalismo', description: 'Sin esquinas redondeadas, sin compromisos' }
+];
+
+const values = [
+  {
+    title: 'SIN TONTERÍAS',
+    description: 'Te decimos qué funciona, qué no, y exactamente cuánto cuesta.',
+    icon: '🎯'
+  },
+  {
+    title: 'RENDIMIENTO PRIMERO',
+    description: 'Cada milisegundo cuenta. Optimizamos como si tu ingreso dependiera de ello.',
+    icon: '⚡'
+  },
+  {
+    title: 'CONSTRUIDO PARA DURAR',
+    description: 'Sitios de 15+ años todavía funcionan fuertemente. Ese es nuestro estándar.',
+    icon: '🏗️'
+  },
+  {
+    title: 'ENFOCADO EN LA COMUNIDAD',
+    description: 'Construimos plataformas donde la gente quiere quedarse, no solo visitar.',
+    icon: '👥'
+  }
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} locale="es_ES">
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-brutal-black text-brutal-white pt-32">
+    <!-- Animated Shapes -->
+    <div class="absolute top-20 left-20 w-64 h-64 bg-brutal-yellow transform rotate-45 animate-float opacity-20"></div>
+    <div class="absolute bottom-20 right-20 w-48 h-48 border-[20px] border-brutal-blue transform -rotate-12 animate-float animation-delay-400 opacity-20"></div>
+
+    <div class="container mx-auto px-edge relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display font-black text-[clamp(3rem,10vw,8rem)] leading-[0.85] mb-8">
+          <span class="block text-brutal-yellow">SOBRE</span>
+          <span class="block text-outline -mt-4">BrutalFolio</span>
+        </h1>
+        <p class="text-2xl md:text-3xl font-display font-bold">
+          Construyendo sitios de WordPress desde 2009.
+          <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black transform rotate-1 shadow-brutal ml-2">Todavía aquí.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-8">
+              <span class="inline-block px-4 py-2 bg-brutal-black text-brutal-white transform -rotate-1">
+                LA HISTORIA
+              </span>
+            </h2>
+            <div class="space-y-6 text-lg">
+              <p class="font-bold">
+                Fundamos BrutalFolio cuando todos decían que WordPress era "solo para blogs."
+              </p>
+              <p>
+                Mientras otros perseguían marcos brillantes, nosotros doblamos en WordPress. Construimos foros que sobrevivieron a Facebook. Sitios de comercio electrónico que superaron a sus competidores. Plataformas que simplemente siguieron funcionando.
+              </p>
+              <p>
+                <strong>¿15 años después?</strong> Esas "plataformas de blog" que construimos todavía están destruyendo. TotallyYamaha tiene más de 50K miembros. Polaris Star Power sobrevivió a las redes sociales. Nuestros sitios no solo se lanzan, duran.
+              </p>
+              <p class="p-4 bg-brutal-yellow font-black">
+                No construimos sitios web. Construimos infraestructura digital que se niega a morir.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="border-brutal border-brutal-black bg-brutal-gray p-6 shadow-brutal-lg hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              <div class="text-5xl font-display font-black text-brutal-yellow">
+                <AnimatedCounter client:visible end={15} suffix="+" />
+              </div>
+              <div class="font-mono text-sm uppercase mt-2">Años Funcionando</div>
+            </div>
+            <div class="border-brutal border-brutal-black bg-brutal-gray p-6 shadow-brutal-lg hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              <div class="text-5xl font-display font-black text-brutal-blue">
+                <AnimatedCounter client:visible end={9} />
+              </div>
+              <div class="font-mono text-sm uppercase mt-2">Proyectos Activos</div>
+            </div>
+            <div class="border-brutal border-brutal-black bg-brutal-gray p-6 shadow-brutal-lg hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              <div class="text-5xl font-display font-black text-brutal-green">
+                <AnimatedCounter client:visible end={100} suffix="K+" />
+              </div>
+              <div class="font-mono text-sm uppercase mt-2">Usuarios Activos</div>
+            </div>
+            <div class="border-brutal border-brutal-black bg-brutal-gray p-6 shadow-brutal-lg hover:shadow-brutal-xl hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all">
+              <div class="text-5xl font-display font-black text-brutal-red">
+                <AnimatedCounter client:visible end={99.9} suffix="%" decimals={1} />
+              </div>
+              <div class="font-mono text-sm uppercase mt-2">SLA de Disponibilidad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-section bg-brutal-gray">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-12 text-center">
+          <span class="inline-block px-6 py-3 bg-brutal-blue text-brutal-white transform rotate-1 shadow-brutal-xl">
+            EL VIAJE
+          </span>
+        </h2>
+
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div class="absolute left-8 top-0 bottom-0 w-1 bg-brutal-black"></div>
+
+          <!-- Milestones -->
+          <div class="space-y-12">
+            {milestones.map((milestone, index) => (
+              <div class={`flex items-start gap-8 animate-on-scroll`} style={`animation-delay: ${index * 100}ms`}>
+                <!-- Year Badge -->
+                <div class="relative flex-shrink-0">
+                  <div class="w-16 h-16 bg-brutal-yellow border-4 border-brutal-black flex items-center justify-center shadow-brutal transform rotate-12 hover:rotate-0 transition-transform">
+                    <span class="font-mono font-bold text-xs">{milestone.year}</span>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-grow pb-8">
+                  <h3 class="font-display font-black text-2xl mb-2">{milestone.event}</h3>
+                  <p class="text-lg text-brutal-black/80">{milestone.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-section bg-brutal-black text-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-12 text-center">
+          <span class="inline-block px-6 py-3 bg-brutal-red text-brutal-white transform -rotate-1 shadow-brutal-xl">
+            NUESTROS VALORES
+          </span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value, index) => (
+            <div
+              class={`border-4 border-brutal-yellow bg-brutal-black p-6 hover:bg-brutal-yellow hover:text-brutal-black transition-all duration-200 animate-on-scroll`}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class="text-4xl mb-4">{value.icon}</div>
+              <h3 class="font-display font-black text-xl mb-3">{value.title}</h3>
+              <p class="font-bold">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-section bg-brutal-white">
+    <div class="container mx-auto px-edge">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-12 text-center">
+          <span class="inline-block px-6 py-3 bg-brutal-green text-brutal-black transform rotate-1 shadow-brutal-xl">
+            EL EQUIPO
+          </span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {team.map((member, index) => (
+            <div
+              class={`border-brutal border-brutal-black shadow-brutal-xl overflow-hidden animate-on-scroll hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all`}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class={`h-48 ${member.color} flex items-center justify-center`}>
+                <span class="font-display font-black text-6xl text-brutal-black/20">{ member.name.split(' ')[0][0] + member.name.split(' ')[1][0] }</span>
+              </div>
+              <div class="p-6 bg-brutal-white">
+                <span class="inline-block px-2 py-1 bg-brutal-black text-brutal-white font-mono text-xs mb-3">
+                  {member.role}
+                </span>
+                <h3 class="font-display font-black text-2xl mb-3">{member.name}</h3>
+                <p class="text-lg">{member.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-section bg-brutal-yellow">
+    <div class="container mx-auto px-edge text-center">
+      <h2 class="font-display font-black text-[clamp(2rem,8vw,5rem)] mb-8">
+        ¿LISTO PARA CONSTRUIR ALGO QUE DURE?
+      </h2>
+      <p class="text-2xl font-bold mb-12 max-w-3xl mx-auto">
+        No hacemos soluciones rápidas ni temporales. Construimos infraestructura digital.
+      </p>
+      <a href="/es/contact" class="inline-block px-12 py-6 bg-brutal-black text-brutal-white font-black text-xl uppercase border-4 border-brutal-black shadow-brutal-xl hover:shadow-brutal hover:translate-x-2 hover:translate-y-2 transition-all">
+        INICIA TU PROYECTO →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+

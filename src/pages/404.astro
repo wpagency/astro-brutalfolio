@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BrutalCursor from '../components/islands/BrutalCursor';
+
+const pageTitle = '404 | Page Not Found';
+const pageDescription = 'Oops! This page got lost in the digital void.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <section class="min-h-screen flex items-center justify-center bg-brutal-black text-brutal-white relative overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0">
+      <!-- Floating Shapes -->
+      <div class="absolute top-20 left-20 w-64 h-64 bg-brutal-red transform rotate-45 animate-float opacity-20"></div>
+      <div class="absolute bottom-20 right-20 w-48 h-48 border-[20px] border-brutal-yellow transform -rotate-12 animate-float animation-delay-400 opacity-20"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brutal-blue rounded-full animate-pulse opacity-10"></div>
+    </div>
+
+    <div class="container mx-auto px-edge relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Giant 404 -->
+        <h1 class="font-display font-black text-[clamp(8rem,20vw,20rem)] leading-[0.8] mb-8">
+          <span class="text-outline">404</span>
+        </h1>
+
+        <!-- Error Message -->
+        <div class="mb-12">
+          <h2 class="font-display font-black text-[clamp(2rem,6vw,4rem)] mb-6">
+            <span class="inline-block px-6 py-3 bg-brutal-red transform -rotate-2 shadow-brutal-xl">
+              PAGE NOT FOUND
+            </span>
+          </h2>
+          <p class="text-2xl md:text-3xl font-bold">
+            This page got lost in the
+            <span class="inline-block px-4 py-2 bg-brutal-yellow text-brutal-black transform rotate-1 ml-2">digital void</span>
+          </p>
+        </div>
+
+        <!-- Glitch Text Animation -->
+        <div class="mb-12 font-mono text-xl">
+          <div class="animate-pulse">&gt; ERROR_CODE: PAGE_NOT_FOUND</div>
+          <div class="animate-pulse animation-delay-200">&gt; STATUS: 404</div>
+          <div class="animate-pulse animation-delay-400">&gt; SUGGESTION: GO_BACK_HOME</div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-6 justify-center">
+          <Button variant="primary" size="large" href="/" class="bg-brutal-yellow text-brutal-black border-brutal-white">
+            GO HOME →
+          </Button>
+          <Button variant="outline" size="large" href="/blog" class="border-brutal-white text-brutal-white hover:bg-brutal-white hover:text-brutal-black">
+            READ BLOG →
+          </Button>
+        </div>
+
+        <!-- Fun Message -->
+        <div class="mt-16 p-8 border-4 border-brutal-yellow bg-brutal-black/50">
+          <p class="text-lg font-bold mb-4">While you're here...</p>
+          <p class="font-mono">
+            Fun fact: 404 errors happen to the best of us. Even Google has them.
+            The difference? We admit it and have a cool error page.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Random Floating Numbers -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-[10%] left-[10%] text-6xl font-black text-brutal-yellow/20 animate-float">404</div>
+      <div class="absolute top-[60%] left-[80%] text-4xl font-black text-brutal-blue/20 animate-float animation-delay-200">404</div>
+      <div class="absolute top-[80%] left-[20%] text-8xl font-black text-brutal-green/10 animate-float animation-delay-400">404</div>
+      <div class="absolute top-[30%] right-[15%] text-5xl font-black text-brutal-purple/20 animate-float animation-delay-600">404</div>
+    </div>
+  </section>
+</BaseLayout>
+

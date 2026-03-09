@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
+import Portfolio from '../components/sections/Portfolio.astro';
+import About from '../components/sections/About.astro';
+import Contact from '../components/sections/Contact.astro';
+
+// React Islands
+import BrutalCursor from '../components/islands/BrutalCursor';
+import ScrollAnimations from '../components/islands/ScrollAnimations';
+
+const pageTitle = 'BrutalFolio | Premium WordPress Development & Neo-Brutalist Design';
+const pageDescription = 'Elite WordPress development agency crafting bold digital experiences. Performance-focused, no-BS approach.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor (desktop only) -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+
+  <!-- Main Sections -->
+  <Hero />
+  <Services />
+  <Portfolio />
+  <About />
+  <Contact />
+</BaseLayout>
+

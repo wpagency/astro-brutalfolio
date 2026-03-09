@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import Services from '../../components/sections/Services.astro';
+import Portfolio from '../../components/sections/Portfolio.astro';
+import About from '../../components/sections/About.astro';
+import Contact from '../../components/sections/Contact.astro';
+import BrutalCursor from '../../components/islands/BrutalCursor';
+import ScrollAnimations from '../../components/islands/ScrollAnimations';
+
+const pageTitle = 'BrutalFolio | Desarrollo WordPress Élite';
+const pageDescription = 'Desarrollo WordPress de élite para marcas que se niegan a pasar desapercibidas. Sin esquinas redondeadas. Sin compromisos. Solo resultados brutales.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- Custom Cursor -->
+  <div class="hidden lg:block">
+    <BrutalCursor client:load />
+  </div>
+
+  <!-- Scroll Animations -->
+  <ScrollAnimations client:load />
+
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Services Section -->
+  <Services />
+
+  <!-- Portfolio Section -->
+  <Portfolio />
+
+  <!-- About Section -->
+  <About />
+
+  <!-- Contact Section -->
+  <Contact />
+
+  <!-- Grain Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-[9996] opacity-[0.03] grain"></div>
+</BaseLayout>
+
+

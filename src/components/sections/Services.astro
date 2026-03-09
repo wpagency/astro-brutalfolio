@@ -1,0 +1,98 @@
+---
+import Button from '../ui/Button.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const services = [
+  {
+    title: t('services.wordpressDev'),
+    description: t('services.wordpressDevDesc'),
+    icon: '⚡',
+    color: 'bg-brutal-yellow',
+  },
+  {
+    title: t('services.ecommerce'),
+    description: t('services.ecommerceDesc'),
+    icon: '🛒',
+    color: 'bg-brutal-blue',
+  },
+  {
+    title: t('services.performance'),
+    description: t('services.performanceDesc'),
+    icon: '🚀',
+    color: 'bg-brutal-green',
+  },
+  {
+    title: t('services.maintenance'),
+    description: t('services.maintenanceDesc'),
+    icon: '🛡️',
+    color: 'bg-brutal-purple',
+  },
+];
+---
+
+<section id="services" class="py-section bg-brutal-white">
+  <div class="container mx-auto px-edge">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="mb-12">
+        <span class="inline-block px-4 py-2 bg-brutal-black text-brutal-white font-mono text-sm mb-4">
+          {t('services.whatWeDo')}
+        </span>
+        <h2 class="font-display text-title font-bold mb-6">
+          {t('services.title')}
+          <span class="text-gradient-brutal"> {t('services.actuallyDeliver')}</span>
+        </h2>
+        <p class="text-xl text-brutal-black/80 max-w-2xl">
+          {t('services.noFluff')}
+        </p>
+      </div>
+
+      <!-- Services Grid with Enhanced Brutalism -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {services.map((service, index) => (
+          <div
+            class={`card-brutal p-8 bg-brutal-white group animate-on-scroll transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0`}
+            style={`animation-delay: ${index * 100}ms`}
+            data-shake
+          >
+            <!-- Big Number -->
+            <div class="absolute -top-8 -left-8 text-[120px] font-black text-brutal-black/10 leading-none">
+              0{index + 1}
+            </div>
+
+            <div class={`inline-block text-5xl mb-6 p-6 ${service.color} border-brutal border-brutal-black shadow-brutal-lg transform -rotate-3 group-hover:rotate-0 transition-transform`}>
+              {service.icon}
+            </div>
+            <h3 class="font-display font-black text-3xl mb-4 uppercase">
+              {service.title}
+            </h3>
+            <p class="text-xl text-brutal-black/80 mb-6 font-bold">
+              {service.description}
+            </p>
+            <Button variant="outline" size="small" href="#contact" class="font-black">
+              LEARN MORE →
+            </Button>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 text-center">
+        <div class="inline-block p-8 bg-brutal-yellow border-mega border-brutal-black shadow-brutal-xl">
+          <h3 class="font-display font-bold text-3xl mb-4">
+            Ready to Build Something Amazing?
+          </h3>
+          <p class="text-xl mb-6">Let's discuss your project. No commitment required.</p>
+          <Button variant="primary" size="large" href="#contact">
+            Get Started Now
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
